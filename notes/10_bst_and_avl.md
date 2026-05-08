@@ -518,7 +518,136 @@ Result:
 
 ---
 
-## 8. BST Advantages Over Array and Linked List
+## 8. AVL Tree (Adelson-Velsky and Landis)
+
+### 8.1 Definition
+An **AVL tree** is a **self-balancing Binary Search Tree** where the difference between the heights of the left and right subtrees of every node is at most 1.
+
+> **Balance Factor (BF) = Height(Left Subtree) − Height(Right Subtree)**
+> 
+> For every node in an AVL tree: **BF ∈ {-1, 0, +1}**
+
+### Intuition
+A regular BST can become skewed (like a linked list) with bad insertion order, making operations O(n). AVL trees prevent this by **rebalancing** after every insertion/deletion, guaranteeing O(log n) operations.
+
+### 8.2 Why AVL Trees?
+
+| Tree Type | Search | Insert | Delete |
+|---|---|---|---|
+| BST (balanced) | O(log n) | O(log n) | O(log n) |
+| BST (skewed) | O(n) | O(n) | O(n) |
+| **AVL Tree** | **O(log n) guaranteed** | **O(log n) guaranteed** | **O(log n) guaranteed** |
+
+### 8.3 Rotations
+
+When an insertion/deletion causes a node's balance factor to become ±2, we perform **rotations** to rebalance.
+
+#### Case 1: Left-Left (LL) → Right Rotation
+```
+Before (BF of A = +2):        After Right Rotation:
+        A (+2)                       B (0)
+       /                            / \
+      B (+1)                       C   A
+     /
+    C
+
+Right Rotate around A: B becomes root, A becomes B's right child.
+```
+
+#### Case 2: Right-Right (RR) → Left Rotation
+```
+Before (BF of A = -2):        After Left Rotation:
+    A (-2)                         B (0)
+     \                            / \
+      B (-1)                     A   C
+       \
+        C
+
+Left Rotate around A: B becomes root, A becomes B's left child.
+```
+
+#### Case 3: Left-Right (LR) → Left Rotation then Right Rotation
+```
+Before:                   After Left Rotate at B:    After Right Rotate at A:
+    A (+2)                      A (+2)                      C (0)
+   /                           /                           / \
+  B (-1)                      C (+1)                      B   A
+   \                         /
+    C                       B
+
+Step 1: Left rotate around B
+Step 2: Right rotate around A
+```
+
+#### Case 4: Right-Left (RL) → Right Rotation then Left Rotation
+```
+Before:                   After Right Rotate at B:   After Left Rotate at A:
+  A (-2)                    A (-2)                        C (0)
+   \                         \                           / \
+    B (+1)                    C (-1)                    A   B
+   /                           \
+  C                             B
+
+Step 1: Right rotate around B
+Step 2: Left rotate around A
+```
+
+### 8.4 AVL Insertion Example
+
+Insert: 10, 20, 30, 25, 28
+
+```
+Insert 10:       10 (BF=0)
+
+Insert 20:       10 (BF=-1)
+                   \
+                    20
+
+Insert 30:       10 (BF=-2)  ← UNBALANCED! RR case
+                   \
+                    20 (BF=-1)
+                      \
+                       30
+
+After Left Rotation at 10:
+                 20 (BF=0)
+                /  \
+              10    30
+
+Insert 25:       20 (BF=-1)
+                /  \
+              10    30 (BF=+1)
+                   /
+                  25
+
+Insert 28:       20 (BF=-2)  ← UNBALANCED at 20!
+                /  \
+              10    30 (BF=+2) ← UNBALANCED at 30! (LR case at 30)
+                   /
+                  25 (BF=-1)
+                    \
+                     28
+
+Fix at 30: LR case
+Step 1: Left rotate at 25:    Step 2: Right rotate at 30:
+        30                           28
+       /                            / \
+      28                           25  30
+     /
+    25
+
+Result:
+                 20
+                /  \
+              10    28
+                   / \
+                  25  30
+All BFs ∈ {-1, 0, +1} ✓
+```
+
+---
+
+## 9. BST Advantages Over Array and Linked List
 
 This is asked in **2017, 2021, 2024**.
 
@@ -534,7 +663,7 @@ This is asked in **2017, 2021, 2024**.
 
 ---
 
-## 9. Exam-Ready Summary
+## 10. Exam-Ready Summary
 
 ### Quick Revision Points
 1. **BST property:** Left < Root < Right (recursively)
@@ -543,6 +672,7 @@ This is asked in **2017, 2021, 2024**.
 4. **Deletion 3 cases:** leaf (remove), one child (bypass), two children (replace with inorder successor)
 5. **Inorder successor:** smallest node in right subtree (go right once, then keep going left)
 6. **Traversal mnemonics:** Pre=Root first, In=Root middle, Post=Root last
+7. **AVL:** Self-balancing BST, BF ∈ {-1,0,+1}, 4 rotation cases (LL, RR, LR, RL)
 
 ### Most Common Exam Questions
 - BST construction + all 3 traversals (2017–2024, every year, 04–06 marks)
@@ -552,7 +682,7 @@ This is asked in **2017, 2021, 2024**.
 
 ---
 
-## 10. Practice Problems (From Past Exams)
+## 11. Practice Problems (From Past Exams)
 
 ### Problem 1 [2023, CLO4, 06 marks]
 **Q:** Construct BST from J, R, D, G, T, E, M, H, P, A, F, Q. Show inorder, preorder, postorder. Delete G.

@@ -291,7 +291,47 @@ void heapify(int arr[], int n, int i) {
 
 ---
 
-## 6. Exam-Ready Summary
+## 6. B-Tree
+
+### 6.1 Definition
+A **B-tree of order m** is a self-balancing search tree designed for systems that read and write large blocks of data (disk-based storage). Every node can have **up to m children** and **up to m−1 keys**.
+
+### 6.2 Properties of B-tree of order m:
+1. Every node has **at most m children**
+2. Every node (except root) has **at least ⌈m/2⌉ children**
+3. The root has **at least 2 children** (if it's not a leaf)
+4. All **leaves appear at the same level**
+5. A non-leaf node with k children contains **k−1 keys**
+6. Keys within a node are in **sorted order**
+
+### 6.3 Example: B-tree of order 3 (2-3 tree)
+Each node has at most 3 children and 2 keys.
+
+```
+              [20, 40]
+             /   |    \
+      [10,15] [25,30] [50,60]
+```
+
+### 6.4 Why B-trees?
+- Designed for **disk-based storage** where reading a large block is efficient
+- **Minimizes disk I/O** — each node read brings many keys
+- Used in **databases** and **file systems**
+- All operations are O(log n) with a very large branching factor
+
+### 6.5 B-tree vs BST
+
+| Criterion | BST | B-tree |
+|---|---|---|
+| Max children per node | 2 | m (can be thousands) |
+| Height for n keys | O(log₂ n) | O(log_m n) — much shorter |
+| Best for | In-memory data | Disk-based data |
+| Balance | Not guaranteed (unless AVL/RB) | Always balanced |
+| Keys per node | 1 | Up to m−1 |
+
+---
+
+## 7. Exam-Ready Summary
 
 ### Quick Revision Points
 1. **Heap** = complete binary tree + heap property (max or min)
@@ -301,10 +341,11 @@ void heapify(int arr[], int n, int i) {
 5. **Build heap:** Start from last non-leaf → sift down each → **O(n)**
 6. **Heapsort:** Build max-heap + n extractions → O(n log n) guaranteed
 7. **Min-heap from [34,30,40,22,50,2,55,77,55]** → result: [2,22,34,30,50,40,55,77,55]
+8. **B-tree order m:** up to m children, m−1 keys per node, all leaves same level
 
 ---
 
-## 7. Practice Problems (From Past Exams)
+## 8. Practice Problems (From Past Exams)
 
 ### Problem 1 [2022 & 2024, 04–05 marks]
 **Q:** Build min-heap from: 34, 30, 40, 22, 50, 2, 55, 77, 55. Insert 80 and 75.
@@ -320,6 +361,11 @@ void heapify(int arr[], int n, int i) {
 **Q:** Delete the root from max-heap [90, 70, 80, 50, 60, 40]. Show the resulting heap.
 
 **Answer:** Replace root with 40 → sift down: 40↔80, then 40↔(no swap needed) → [80, 70, 40, 50, 60].
+
+### Problem 4 [2024, 03 marks]
+**Q:** Define B-tree. State its properties for order 5.
+
+**Answer:** Each node: max 5 children, max 4 keys, min ⌈5/2⌉=3 children (non-root), all leaves same level.
 
 ---
 

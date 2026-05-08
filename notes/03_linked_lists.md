@@ -46,6 +46,8 @@ Two special pointers:
 - **START** — points to the first node of the list
 - **AVAIL** — points to the first node of the free space (available memory) list
 
+> **Exam Note (Array Memory Calculation):** The syllabus explicitly mentions "Array memory calculation math" alongside Linked Lists. This refers to 1D/2D array address calculation formulas (Row-Major/Column-Major) which are often bundled with Linked List theory questions in exams. Please refer to **[Chapter 2: Arrays and Matrices](02_arrays_and_matrices.md)** for detailed mathematical formulas and worked examples.
+
 ### Example
 
 ```

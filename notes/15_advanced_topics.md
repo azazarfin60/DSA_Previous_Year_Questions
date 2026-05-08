@@ -332,7 +332,35 @@ Most frequent character (f: 45) gets shortest code (1 bit). Least frequent (a: 5
 
 ---
 
-## 7. Exam-Ready Summary
+## 7. Performance Analysis vs Performance Measurement
+
+### 7.1 Definitions
+| Criterion | Performance Analysis (A Priori) | Performance Measurement (A Posteriori) |
+|---|---|---|
+| **What is it?** | Theoretical estimation of resource usage (Time/Space Complexity). | Actual measurement of running time and memory usage. |
+| **When is it done?** | Before implementation (during algorithm design). | After implementation and compilation. |
+| **Dependency** | Independent of hardware, language, or compiler. | Highly dependent on CPU speed, RAM, OS, compiler, and language. |
+| **Output Format** | Expressed in asymptotic notations (O, Ω, Θ). | Expressed in absolute time (seconds/milliseconds) or bytes. |
+
+### 7.2 Why is Analysis preferred?
+Measurement is hardware-dependent. An O(n²) algorithm might run faster than an O(n) algorithm on a supercomputer vs a phone for small inputs, giving a misleading conclusion. Analysis provides a universal, hardware-independent metric.
+
+---
+
+## 8. Garbage Collection
+
+### 8.1 Definition
+**Garbage Collection (GC)** is a form of automatic memory management. The garbage collector attempts to reclaim garbage, or memory occupied by objects that are no longer in use by the program.
+
+### 8.2 Common Approaches
+1. **Reference Counting:** Every object keeps a count of the number of references to it. When the count reaches zero, the object's memory is reclaimed. (Problem: Cannot handle cyclic references).
+2. **Mark-and-Sweep:** 
+   - **Mark phase:** Traverses from root objects and marks all reachable objects as "alive".
+   - **Sweep phase:** Scans the heap and frees any memory that is not marked.
+
+---
+
+## 9. Exam-Ready Summary
 
 ### Quick Revision Points
 1. **0/1 Knapsack (DP):** Build table V[i][w], each item taken or not. O(nW).
@@ -341,10 +369,12 @@ Most frequent character (f: 45) gets shortest code (1 bit). Least frequent (a: 5
 4. **N-Queens:** Backtracking — place row by row, check safety, backtrack on failure.
 5. **NP-Complete:** Both in NP and NP-Hard. No known polynomial solution.
 6. **Huffman:** Greedy, min-heap, frequent chars get shorter codes.
+7. **Performance Analysis vs Measurement:** Analysis = theoretical (O notation), Measurement = actual time (seconds).
+8. **Garbage Collection:** Automatic memory cleanup (Reference counting, Mark-and-sweep).
 
 ---
 
-## 8. Practice Problems (From Past Exams)
+## 10. Practice Problems (From Past Exams)
 
 ### Problem 1 [2022, 2024, 04 marks]
 **Q:** Solve 0/1 Knapsack for items with weights [2,3,4,5], values [3,4,5,6], capacity W=5.
