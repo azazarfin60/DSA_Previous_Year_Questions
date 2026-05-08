@@ -1,1 +1,25 @@
+# === Agent / IDE Config ===
 /AGENTS.md
+.gemini/
+
+# === Node.js ===
+node_modules/
+package-lock.json
+
+# === Pipeline Artifacts (reproducible) ===
+raw_transcripts/
+audio_temp/
+local_transcribe.py
+playlist_data.json
+note_generation_map.json
+fetch_transcripts.js
+no_transcript.md
+
+# === Scanned Syllabus Images ===
+topiclist_pages-to-jpg/
+
+# === OS / Editor ===
+.DS_Store
+Thumbs.db
+*.swp
+*~
