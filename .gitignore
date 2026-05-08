@@ -23,3 +23,5 @@ topiclist_pages-to-jpg/
 Thumbs.db
 *.swp
 *~
+# === Debug / Cleanup Scripts ===
+*.py
