@@ -30,10 +30,11 @@ The array is conceptually split into a sorted and an unsorted part. Values from 
 **Insertion Sort Algorithm & Selection Sort Intro**
 
 **Insertion Sort Algorithm (C Style):**
-```c
-for (i = 1; i < n; i++) {
-    key = A[i];
-    j = i - 1;
+**C++ Style:**
+```cpp
+for (int i = 1; i < n; i++) {
+    int key = A[i];
+    int j = i - 1;
     
     // Move elements of A[0..i-1] that are greater than key
     // to one position ahead of their current position
@@ -43,6 +44,21 @@ for (i = 1; i < n; i++) {
     }
     A[j + 1] = key;
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure INSERTION_SORT(A, N)
+    For I = 1 to N - 1 do
+        Set KEY = A[I]
+        Set J = I - 1
+        While J >= 0 AND A[J] > KEY do
+            Set A[J + 1] = A[J]
+            Set J = J - 1
+        End While
+        Set A[J + 1] = KEY
+    End For
+End Procedure
 ```
 
 ### Selection Sort
@@ -87,15 +103,28 @@ for (i = 1; i < n; i++) {
   - **Time Complexity:** Low (Very efficient).
 
 **Merge Sort Algorithm (Pseudocode):**
-```c
-MergeSort(l, h) {
+**C++ Style:**
+```cpp
+void MergeSort(int l, int h) {
     if (l < h) {
-        mid = (l + h) / 2;
+        int mid = (l + h) / 2;
         MergeSort(l, mid);       // Divide left half
         MergeSort(mid + 1, h);   // Divide right half
         Merge(l, mid, h);        // Conquer/Merge
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure MERGE_SORT(A, LOW, HIGH)
+    If LOW < HIGH Then
+        Set MID = (LOW + HIGH) / 2
+        Call MERGE_SORT(A, LOW, MID)
+        Call MERGE_SORT(A, MID + 1, HIGH)
+        Call MERGE(A, LOW, MID, HIGH)
+    End If
+End Procedure
 ```
 
 **Division Diagram:**

@@ -199,6 +199,22 @@ After Pass 5: **E, E, L, O, P, P** ✓ | Comparisons: 1, Swaps: 0
 
 ## [2020] Q.1(c) Bubble sort pseudocode with example. (05)
 
+**C++ Style:**
+```cpp
+void bubbleSort(int A[], int N) {
+    for (int I = 0; I < N - 1; I++) {
+        for (int J = 0; J < N - I - 1; J++) {
+            if (A[J] > A[J+1]) {
+                int temp = A[J];
+                A[J] = A[J+1];
+                A[J+1] = temp;
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BUBBLE_SORT(A, N)
     For I = 1 to N-1 do
@@ -235,6 +251,22 @@ End Procedure
 
 ## [2020] Q.5(b) Insertion sort pseudocode + time complexity. (04)
 
+**C++ Style:**
+```cpp
+void insertionSort(int A[], int N) {
+    for (int I = 1; I < N; I++) {
+        int KEY = A[I];
+        int J = I - 1;
+        while (J >= 0 && A[J] > KEY) {
+            A[J+1] = A[J];
+            J = J - 1;
+        }
+        A[J+1] = KEY;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERTION_SORT(A, N)
     For I = 2 to N do
@@ -260,6 +292,55 @@ End Procedure
 
 ## [2021] Q.7(c) Merge sort pseudocode + time complexity. (04)
 
+**C++ Style:**
+```cpp
+void mergeSort(int A[], int LOW, int HIGH) {
+    if (LOW < HIGH) {
+        int MID = LOW + (HIGH - LOW) / 2;
+        mergeSort(A, LOW, MID);         // sort left half
+        mergeSort(A, MID + 1, HIGH);    // sort right half
+        merge(A, LOW, MID, HIGH);       // merge two halves
+    }
+}
+
+void merge(int A[], int LOW, int MID, int HIGH) {
+    int n1 = MID - LOW + 1;
+    int n2 = HIGH - MID;
+    
+    int* L = new int[n1];
+    int* R = new int[n2];
+    
+    for(int i = 0; i < n1; i++) L[i] = A[LOW + i];
+    for(int j = 0; j < n2; j++) R[j] = A[MID + 1 + j];
+    
+    int I = 0, J = 0, K = LOW;
+    while (I < n1 && J < n2) {
+        if (L[I] <= R[J]) {
+            A[K] = L[I];
+            I++;
+        } else {
+            A[K] = R[J];
+            J++;
+        }
+        K++;
+    }
+    
+    while (I < n1) {
+        A[K] = L[I];
+        I++;
+        K++;
+    }
+    while (J < n2) {
+        A[K] = R[J];
+        J++;
+        K++;
+    }
+    delete[] L;
+    delete[] R;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure MERGE_SORT(A, LOW, HIGH)
     If LOW < HIGH Then

@@ -39,6 +39,23 @@
 **Complexity of an Algorithm:** A measure of the amount of time and/or space an algorithm requires as a function of the input size n. It tells us how the algorithm's performance scales as input grows.
 
 **Linear Search Algorithm:**
+**C++ Style:**
+```cpp
+int linearSearch(int A[], int N, int ITEM) {
+    int I = 0;
+    while (I < N) {
+        if (A[I] == ITEM) {
+            cout << "Found at position " << I << endl;
+            return I;
+        }
+        I = I + 1;
+    }
+    cout << "Not Found" << endl;
+    return -1;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure LINEAR_SEARCH(A, N, ITEM)
     Set I = 1
@@ -66,6 +83,28 @@ End Procedure
 
 ## [2019] Q.2(b) Algorithm of binary search. (04)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int N, int ITEM) {
+    int BEG = 0; // 0-indexed for C++
+    int END = N - 1;
+    while (BEG <= END) {
+        int MID = BEG + (END - BEG) / 2;
+        if (A[MID] == ITEM) {
+            cout << "Found at position " << MID << endl;
+            return MID;
+        } else if (ITEM < A[MID]) {
+            END = MID - 1;          // search left half
+        } else {
+            BEG = MID + 1;          // search right half
+        }
+    }
+    cout << "Item not found" << endl;
+    return -1;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(A, N, ITEM)
     // A = sorted array, N = size, ITEM = element to find
@@ -179,6 +218,25 @@ Binary search is **exponentially faster** but requires sorted data.
 
 ## [2021] Q.1(b) Binary search recursive pseudocode + time complexity. (05)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int BEG, int END, int ITEM) {
+    if (BEG > END) {
+        cout << "Item not found" << endl;
+        return -1;
+    }
+    int MID = BEG + (END - BEG) / 2;
+    if (A[MID] == ITEM) {
+        return MID;                              // found
+    } else if (ITEM < A[MID]) {
+        return binarySearch(A, BEG, MID - 1, ITEM);  // left half
+    } else {
+        return binarySearch(A, MID + 1, END, ITEM);  // right half
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(A, BEG, END, ITEM)
     If BEG > END Then
@@ -211,6 +269,24 @@ End Procedure
 
 ## [2022] Q.3(a) Complete Binary Search recursive code. (CO3, 03)
 
+**C++ Style:**
+```cpp
+int binarySearch(int ARR[], int L, int R, int X) {
+    if (L > R) {
+        return -1;                       // not found
+    }
+    int MID = L + (R - L) / 2;
+    if (ARR[MID] == X) {
+        return MID;                      // found
+    } else if (X < ARR[MID]) {
+        return binarySearch(ARR, L, MID - 1, X);
+    } else {
+        return binarySearch(ARR, MID + 1, R, X);
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(ARR, L, R, X)
     If L > R Then
@@ -234,6 +310,24 @@ End Procedure
 
 ## [2023] Q.1(b) Complete BinarySearch recursive function + time complexity. (CLO3, 06)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int l, int h, int x) {
+    if (l > h) {
+        return -1;                              // not found
+    }
+    int mid = l + (h - l) / 2;
+    if (A[mid] == x) {
+        return mid;                             // found at mid
+    } else if (x < A[mid]) {
+        return binarySearch(A, l, mid - 1, x);  // search left
+    } else {
+        return binarySearch(A, mid + 1, h, x);  // search right
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BinarySearch(A, l, h, x)
     If l > h Then
@@ -277,6 +371,19 @@ Binary search requires **O(1) random access** to the middle element. Linked list
 
 **Linear Search:** Scans each element one by one until the target is found or the array ends.
 
+**C++ Style:**
+```cpp
+int linearSearch(int A[], int N, int ITEM) {
+    for (int I = 0; I < N; I++) {
+        if (A[I] == ITEM) {
+            return I;
+        }
+    }
+    return -1;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure LINEAR_SEARCH(A, N, ITEM)
     For I = 1 to N do

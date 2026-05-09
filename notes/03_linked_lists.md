@@ -197,6 +197,19 @@ Both first.PREV → last and last.NEXT → first.
 
 **Goal:** Visit every node from START to the end (NULL).
 
+**C++ Style:**
+```cpp
+void traverseList(Node* START) {
+    Node* PTR = START;
+    while (PTR != nullptr) {
+        cout << PTR->data << " ";  // process data
+        PTR = PTR->link;           // move to next node
+    }
+    cout << endl;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure TRAVERSE(START)
     Set PTR = START
@@ -224,6 +237,21 @@ Stop.
 
 **Goal:** Find the location (index) of a node containing a given ITEM.
 
+**C++ Style:**
+```cpp
+Node* searchList(Node* START, int ITEM) {
+    Node* PTR = START;
+    while (PTR != nullptr) {
+        if (PTR->data == ITEM) {
+            return PTR;            // found! return node pointer
+        }
+        PTR = PTR->link;
+    }
+    return nullptr;                // not found
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure SEARCH(START, ITEM)
     Set PTR = START
@@ -245,6 +273,17 @@ End Procedure
 
 **Goal:** Add a new node with ITEM at the start of the list.
 
+**C++ Style:**
+```cpp
+void insertBeginning(Node*& START, int ITEM) {
+    Node* NEW = new Node;          // dynamically allocate new node
+    NEW->data = ITEM;              // fill data
+    NEW->link = START;             // new node points to old first
+    START = NEW;                   // START now points to new node
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_BEGINNING(START, AVAIL, ITEM)
     // Step 1: Check overflow
@@ -283,6 +322,21 @@ After INSERT_BEGINNING(5):
 
 **Goal:** Insert ITEM after the node at position LOC.
 
+**C++ Style:**
+```cpp
+void insertAfter(Node* START, Node* LOC, int ITEM) {
+    if (LOC == nullptr) {
+        cout << "OVERFLOW / Invalid Location" << endl;
+        return;
+    }
+    Node* NEW = new Node;          // dynamically allocate new node
+    NEW->data = ITEM;              // fill data
+    NEW->link = LOC->link;         // new node points to LOC's next
+    LOC->link = NEW;               // LOC now points to new node
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_AFTER(START, AVAIL, LOC, ITEM)
     // Step 1: Check overflow
@@ -321,6 +375,31 @@ After INSERT_AFTER(LOC, 25):
 
 **Goal:** Insert ITEM into its correct position in a sorted linked list.
 
+**C++ Style:**
+```cpp
+void insertSorted(Node*& START, int ITEM) {
+    Node* NEW = new Node;
+    NEW->data = ITEM;
+    
+    Node* PTR = START;
+    Node* PREV = nullptr;
+    
+    while (PTR != nullptr && PTR->data < ITEM) {
+        PREV = PTR;
+        PTR = PTR->link;
+    }
+    
+    if (PREV == nullptr) {
+        NEW->link = START;         // insert at beginning
+        START = NEW;
+    } else {
+        NEW->link = PREV->link;    // insert after PREV
+        PREV->link = NEW;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_SORTED(START, AVAIL, ITEM)
     // Step 1: Check overflow
@@ -365,6 +444,20 @@ Insert after PREV(20): 10 → 20 → 25 → 30 → 40 → NULL ✓
 
 ### 4.6 Deletion from Beginning
 
+**C++ Style:**
+```cpp
+void deleteBeginning(Node*& START) {
+    if (START == nullptr) {
+        cout << "UNDERFLOW - list is empty" << endl;
+        return;
+    }
+    Node* PTR = START;             // save first node
+    START = START->link;           // START moves to second node
+    delete PTR;                    // free memory
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DELETE_BEGINNING(START, AVAIL)
     // Step 1: Check underflow
@@ -389,6 +482,36 @@ End Procedure
 
 ### 4.7 Deletion of a Specific Node (by value)
 
+**C++ Style:**
+```cpp
+void deleteNode(Node*& START, int ITEM) {
+    if (START == nullptr) {
+        cout << "UNDERFLOW" << endl;
+        return;
+    }
+    
+    if (START->data == ITEM) {     // deleting first node
+        Node* PTR = START;
+        START = START->link;
+        delete PTR;
+        return;
+    }
+    
+    Node* PTR = START;
+    while (PTR->link != nullptr) {
+        if (PTR->link->data == ITEM) {
+            Node* TEMP = PTR->link;
+            PTR->link = TEMP->link; // bypass the node
+            delete TEMP;            // free memory
+            return;
+        }
+        PTR = PTR->link;
+    }
+    cout << "ITEM not found" << endl;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DELETE_NODE(START, AVAIL, ITEM)
     // Step 1: Check underflow
@@ -443,6 +566,23 @@ Result: 10 → 20 → 40 → NULL ✓
 
 **Goal:** Reverse the direction of all pointers so the list goes backward.
 
+**C++ Style:**
+```cpp
+Node* reverseList(Node* HEAD) {
+    Node* PREV = nullptr;
+    Node* CURR = HEAD;
+    while (CURR != nullptr) {
+        Node* NEXT_NODE = CURR->link;  // save next
+        CURR->link = PREV;             // reverse pointer
+        PREV = CURR;                   // advance PREV
+        CURR = NEXT_NODE;              // advance CURR
+    }
+    HEAD = PREV;                       // new head is the last node
+    return HEAD;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure REVERSE(HEAD)
     Set PREV = NULL
@@ -508,6 +648,23 @@ struct DNode {
 ```
 
 ### 5.2 Insertion at Beginning
+**C++ Style:**
+```cpp
+void dllInsertBeginning(DNode*& HEAD, int ITEM) {
+    DNode* NEW = new DNode;
+    NEW->data = ITEM;
+    NEW->next = HEAD;
+    NEW->prev = nullptr;
+    
+    if (HEAD != nullptr) {
+        HEAD->prev = NEW;          // old head's PREV points to new node
+    }
+    
+    HEAD = NEW;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DLL_INSERT_BEGINNING(HEAD, ITEM)
     Create NEW node
@@ -527,6 +684,28 @@ End Procedure
 
 This is where DLL shines — **O(1) deletion** because we have access to both neighbors.
 
+**C++ Style:**
+```cpp
+void dllDelete(DNode*& HEAD, DNode* PTR) {
+    if (PTR == nullptr) return;
+    
+    // Case 1: PTR is the first node
+    if (PTR->prev == nullptr) {
+        HEAD = PTR->next;
+    } else {
+        PTR->prev->next = PTR->next;       // previous node skips PTR
+    }
+    
+    // Case 2: PTR is not the last node
+    if (PTR->next != nullptr) {
+        PTR->next->prev = PTR->prev;       // next node's PREV skips PTR
+    }
+    
+    delete PTR;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DLL_DELETE(HEAD, PTR)
     // Case 1: PTR is the first node
@@ -654,6 +833,28 @@ Result: 3x³ + 4x² + 4x + 6
 
 **Goal:** Split one linked list into two at a given position LOC.
 
+**C++ Style:**
+```cpp
+void splitList(Node* HEAD, int LOC, Node*& HEAD2) {
+    Node* PTR = HEAD;
+    int COUNT = 1;
+    
+    // Traverse to the LOC-th node
+    while (COUNT < LOC && PTR != nullptr) {
+        PTR = PTR->link;
+        COUNT++;
+    }
+    
+    if (PTR != nullptr) {
+        HEAD2 = PTR->link;         // second list starts here
+        PTR->link = nullptr;       // terminate first list
+    } else {
+        HEAD2 = nullptr;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure SPLIT_LIST(HEAD, LOC)
     Set PTR = HEAD

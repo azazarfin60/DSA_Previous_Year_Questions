@@ -35,6 +35,19 @@ Looking for a specific book on an **unsorted bookshelf** â€” you must check ever
 
 ### 2.2 Algorithm
 
+**C++ Style:**
+```cpp
+int linearSearch(int A[], int N, int ITEM) {
+    for (int I = 0; I < N; I++) {
+        if (A[I] == ITEM) {
+            return I;                // found at index I
+        }
+    }
+    return -1;                       // not found
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure LINEAR_SEARCH(A, N, ITEM)
     Set LOC = -1                     // not found initially
@@ -146,6 +159,29 @@ You **halve the search space** each time. For 100 numbers, you need at most logâ
 
 ### 4.2 Iterative Algorithm
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int N, int ITEM) {
+    int LOW = 0;
+    int HIGH = N - 1;
+    
+    while (LOW <= HIGH) {
+        int MID = LOW + (HIGH - LOW) / 2; // prevents overflow
+        
+        if (A[MID] == ITEM) {
+            return MID;                   // found at MID
+        } else if (ITEM < A[MID]) {
+            HIGH = MID - 1;               // search left half
+        } else {
+            LOW = MID + 1;                // search right half
+        }
+    }
+    
+    return -1;                            // not found
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(A, N, ITEM)
     Set LOW = 0
@@ -189,6 +225,26 @@ int binarySearch(int A[], int N, int item) {
 
 ### 4.4 Recursive Algorithm
 
+**C++ Style:**
+```cpp
+int binarySearchRec(int A[], int LOW, int HIGH, int ITEM) {
+    if (LOW > HIGH) {
+        return -1;                        // base case: not found
+    }
+    
+    int MID = LOW + (HIGH - LOW) / 2;
+    
+    if (A[MID] == ITEM) {
+        return MID;                       // found
+    } else if (ITEM < A[MID]) {
+        return binarySearchRec(A, LOW, MID - 1, ITEM);   // left half
+    } else {
+        return binarySearchRec(A, MID + 1, HIGH, ITEM);  // right half
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH_REC(A, LOW, HIGH, ITEM)
     If LOW > HIGH Then

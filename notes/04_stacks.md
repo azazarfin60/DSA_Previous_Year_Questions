@@ -54,10 +54,23 @@ Think of a **stack of plates** in a cafeteria:
 
 ### 3.1 PUSH — Insert Element
 
+**C++ Style:**
+```cpp
+void push(int STACK[], int& TOP, int MAXSIZE, int ITEM) {
+    if (TOP == MAXSIZE - 1) { // Assuming 0-indexed array
+        cout << "OVERFLOW" << endl;
+        return;
+    }
+    TOP = TOP + 1;
+    STACK[TOP] = ITEM;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure PUSH(STACK, TOP, MAXSIZE, ITEM)
-    If TOP = MAXSIZE - 1 Then
-        Print "OVERFLOW — Stack is full"
+    If TOP = MAXSIZE Then
+        Print "OVERFLOW"
         Return
     End If
     Set TOP = TOP + 1
@@ -67,10 +80,24 @@ End Procedure
 
 ### 3.2 POP — Remove Element
 
+**C++ Style:**
+```cpp
+void pop(int STACK[], int& TOP) {
+    if (TOP == -1) { // Assuming 0-indexed array
+        cout << "UNDERFLOW" << endl;
+        return;
+    }
+    int ITEM = STACK[TOP];
+    TOP = TOP - 1;
+    cout << "Popped: " << ITEM << endl;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure POP(STACK, TOP)
-    If TOP = -1 Then
-        Print "UNDERFLOW — Stack is empty"
+    If TOP = 0 Then
+        Print "UNDERFLOW"
         Return
     End If
     Set ITEM = STACK[TOP]
@@ -81,11 +108,23 @@ End Procedure
 
 ### 3.3 PEEK — View Top Element (without removing)
 
+**C++ Style:**
+```cpp
+int peek(int STACK[], int TOP) {
+    if (TOP == -1) { // Assuming 0-indexed array
+        cout << "STACK IS EMPTY" << endl;
+        return -1;
+    }
+    return STACK[TOP];
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure PEEK(STACK, TOP)
-    If TOP = -1 Then
-        Print "Stack is empty"
-        Return
+    If TOP = 0 Then
+        Print "STACK IS EMPTY"
+        Return NULL
     End If
     Return STACK[TOP]
 End Procedure
@@ -177,6 +216,44 @@ This is the **most commonly asked** stack question in exams.
 
 ### Algorithm
 
+**C++ Style:**
+```cpp
+#include <stack>
+#include <string>
+
+string infixToPostfix(string infix) {
+    stack<char> s;
+    string output = "";
+    
+    for (char const& c : infix) {
+        if (isalnum(c)) { // Operand
+            output += c;
+        } else if (c == '(') {
+            s.push(c);
+        } else if (c == ')') {
+            while (!s.empty() && s.top() != '(') {
+                output += s.top();
+                s.pop();
+            }
+            s.pop(); // Discard '('
+        } else { // Operator
+            while (!s.empty() && s.top() != '(' && precedence(s.top()) >= precedence(c)) {
+                output += s.top();
+                s.pop();
+            }
+            s.push(c);
+        }
+    }
+    
+    while (!s.empty()) {
+        output += s.top();
+        s.pop();
+    }
+    return output;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INFIX_TO_POSTFIX(infix)
     Create empty STACK
@@ -279,6 +356,33 @@ This is the **exact expression** that appeared in **2021 and 2024 exams**.
 
 ### Algorithm
 
+**C++ Style:**
+```cpp
+#include <stack>
+#include <string>
+
+int evaluatePostfix(string postfix) {
+    stack<int> s;
+    for (char const& c : postfix) {
+        if (isdigit(c)) {
+            s.push(c - '0');
+        } else if (c == ' ') {
+            continue; // Ignore spaces
+        } else {
+            int op2 = s.top(); s.pop();
+            int op1 = s.top(); s.pop();
+            
+            if (c == '+') s.push(op1 + op2);
+            else if (c == '-') s.push(op1 - op2);
+            else if (c == '*') s.push(op1 * op2);
+            else if (c == '/') s.push(op1 / op2);
+        }
+    }
+    return s.top();
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure EVALUATE_POSTFIX(postfix)
     Create empty STACK
@@ -339,6 +443,28 @@ This matters for **subtraction**, **division**, and **exponentiation**!
 ## 7. Postfix → Infix Conversion
 
 ### Algorithm
+**C++ Style:**
+```cpp
+#include <stack>
+#include <string>
+
+string postfixToInfix(string postfix) {
+    stack<string> s;
+    for (char const& c : postfix) {
+        if (isalnum(c)) {
+            s.push(string(1, c));
+        } else {
+            string op2 = s.top(); s.pop();
+            string op1 = s.top(); s.pop();
+            string expr = "(" + op1 + c + op2 + ")";
+            s.push(expr);
+        }
+    }
+    return s.top();
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure POSTFIX_TO_INFIX(postfix)
     Create empty STACK (stores string expressions)

@@ -39,6 +39,22 @@ Data structures organize and manage data efficiently, enabling faster access, in
 
 ## Q.1(c) Bubble sort pseudocode with example. (05)
 
+**C++ Style:**
+```cpp
+void bubbleSort(int A[], int N) {
+    for (int I = 0; I < N - 1; I++) {
+        for (int J = 0; J < N - I - 1; J++) {
+            if (A[J] > A[J+1]) {
+                int temp = A[J];
+                A[J] = A[J+1];
+                A[J+1] = temp;
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BUBBLE_SORT(A, N)
     For I = 1 to N-1 do

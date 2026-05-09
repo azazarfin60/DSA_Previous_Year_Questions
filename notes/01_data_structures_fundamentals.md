@@ -138,14 +138,27 @@ Every data structure supports some or all of these **six fundamental operations*
 **What:** Visiting (accessing) each element of the data structure exactly once in a systematic manner.
 
 **Example — Array Traversal:**
-```c
-// Traverse array A of size N
-void traverse(int A[], int N) {
-    int i;
-    for (i = 0; i < N; i++) {
-        printf("%d ", A[i]);    // process each element
+**C++ Style:**
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Traverse vector A
+void traverse(const vector<int>& A) {
+    for (int i = 0; i < A.size(); i++) {
+        cout << A[i] << " ";    // process each element
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure TRAVERSE(A, N)
+    For I = 0 to N - 1 do
+        Process(A[I])
+    End For
+End Procedure
 ```
 **Time:** O(n) — must visit every element once.
 
@@ -156,16 +169,30 @@ void traverse(int A[], int N) {
 - **Linear Search** — check every element one by one → O(n)
 - **Binary Search** — divide sorted data in half each step → O(log n)
 
-```c
-// Linear search for ITEM in array A of size N
-int linearSearch(int A[], int N, int ITEM) {
-    int i;
-    for (i = 0; i < N; i++) {
+**C++ Style:**
+```cpp
+#include <vector>
+
+// Linear search for ITEM in vector A
+int linearSearch(const vector<int>& A, int ITEM) {
+    for (int i = 0; i < A.size(); i++) {
         if (A[i] == ITEM)
             return i;           // found at index i
     }
     return -1;                  // not found
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure LINEAR_SEARCH(A, N, ITEM)
+    For I = 0 to N - 1 do
+        If A[I] == ITEM Then
+            Return I
+        End If
+    End For
+    Return -1
+End Procedure
 ```
 
 ### 4.3 Inserting
@@ -220,19 +247,50 @@ Merged: [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
 **Pseudocode:**
-```c
-// Merge two sorted arrays A (size M) and B (size N) into C
-void merge(int A[], int M, int B[], int N, int C[]) {
-    int i = 0, j = 0, k = 0;
-    while (i < M && j < N) {
+**C++ Style:**
+```cpp
+#include <vector>
+using namespace std;
+
+// Merge two sorted vectors A and B into C
+void merge(const vector<int>& A, const vector<int>& B, vector<int>& C) {
+    int i = 0, j = 0;
+    while (i < A.size() && j < B.size()) {
         if (A[i] <= B[j])
-            C[k++] = A[i++];       // take from A
+            C.push_back(A[i++]);       // take from A
         else
-            C[k++] = B[j++];       // take from B
+            C.push_back(B[j++]);       // take from B
     }
-    while (i < M) C[k++] = A[i++]; // remaining from A
-    while (j < N) C[k++] = B[j++]; // remaining from B
+    while (i < A.size()) C.push_back(A[i++]); // remaining from A
+    while (j < B.size()) C.push_back(B[j++]); // remaining from B
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure MERGE(A, M, B, N, C)
+    Set I = 0, J = 0, K = 0
+    While I < M AND J < N do
+        If A[I] <= B[J] Then
+            Set C[K] = A[I]
+            Set I = I + 1
+        Else
+            Set C[K] = B[J]
+            Set J = J + 1
+        End If
+        Set K = K + 1
+    End While
+    
+    While I < M do
+        Set C[K] = A[I]
+        Set I = I + 1, K = K + 1
+    End While
+    
+    While J < N do
+        Set C[K] = B[J]
+        Set J = J + 1, K = K + 1
+    End While
+End Procedure
 ```
 **Time:** O(m + n)
 

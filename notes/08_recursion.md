@@ -34,12 +34,23 @@ Every recursive procedure must satisfy these properties:
 
 ### Example: Factorial
 
-```c
+**C++ Style:**
+```cpp
 int factorial(int n) {
     if (n == 0 || n == 1)       // Base case
         return 1;
     return n * factorial(n - 1); // Recursive case (n gets smaller)
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure FACTORIAL(N)
+    If N = 0 OR N = 1 Then
+        Return 1
+    End If
+    Return N * FACTORIAL(N - 1)
+End Procedure
 ```
 
 **Trace: factorial(4)**
@@ -62,17 +73,33 @@ Move `n` disks from peg **A** (source) to peg **C** (destination) using peg **B*
 3. Only the **top disk** of any peg can be moved
 
 ### Algorithm
-```c
+**C++ Style:**
+```cpp
+#include <iostream>
+using namespace std;
+
 void towerOfHanoi(int n, char from, char to, char aux) {
     if (n == 1) {
-        printf("Move disk 1 from %c to %c\n", from, to);
+        cout << "Move disk 1 from " << from << " to " << to << endl;
         return;
     }
     towerOfHanoi(n - 1, from, aux, to);     // move n-1 disks to aux
-    printf("Move disk %d from %c to %c\n", n, from, to);  // move largest
+    cout << "Move disk " << n << " from " << from << " to " << to << endl;  // move largest
     towerOfHanoi(n - 1, aux, to, from);     // move n-1 disks to dest
 }
-// Call: towerOfHanoi(n, 'A', 'C', 'B')
+```
+
+**OR, Textbook Style:**
+```
+Procedure TOWER_OF_HANOI(N, FROM, TO, AUX)
+    If N = 1 Then
+        Print "Move disk 1 from " + FROM + " to " + TO
+        Return
+    End If
+    Call TOWER_OF_HANOI(N - 1, FROM, AUX, TO)
+    Print "Move disk " + N + " from " + FROM + " to " + TO
+    Call TOWER_OF_HANOI(N - 1, AUX, TO, FROM)
+End Procedure
 ```
 
 ### Trace: n = 3 (A → C, using B)
@@ -223,11 +250,22 @@ T(n) = Θ(n log n) ✅
 
 ### Fibonacci Trace: fib(5)
 
-```c
+**C++ Style:**
+```cpp
 int fib(int n) {
     if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
+    return fib(n - 1) + fib(n - 2);
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure FIBONACCI(N)
+    If N <= 1 Then
+        Return N
+    End If
+    Return FIBONACCI(N - 1) + FIBONACCI(N - 2)
+End Procedure
 ```
 
 ```

@@ -237,22 +237,8 @@ Parent of 75 (idx 10) = idx 4 → 50. 75 > 50 → no swap needed. ✓
 1. Build a max-heap from the array
 2. Repeatedly extract the maximum (swap root with last element, reduce heap size, sift down)
 
-```c
-void heapSort(int arr[], int n) {
-    int i, temp;
-    // Build max-heap
-    for (i = n / 2 - 1; i >= 0; i--)
-        heapify(arr, n, i);
-    
-    // Extract elements one by one
-    for (i = n - 1; i > 0; i--) {
-        temp = arr[0];              // swap root (max) with last
-        arr[0] = arr[i];
-        arr[i] = temp;
-        heapify(arr, i, 0);        // heapify reduced heap
-    }
-}
-
+**C++ Style:**
+```cpp
 void heapify(int arr[], int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
@@ -270,6 +256,52 @@ void heapify(int arr[], int n, int i) {
         heapify(arr, n, largest);   // recursive sift down
     }
 }
+
+void heapSort(int arr[], int n) {
+    // Build max-heap
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+    
+    // Extract elements one by one
+    for (int i = n - 1; i > 0; i--) {
+        int temp = arr[0];              // swap root (max) with last
+        arr[0] = arr[i];
+        arr[i] = temp;
+        heapify(arr, i, 0);        // heapify reduced heap
+    }
+}
+```
+
+**OR, Textbook Style:**
+```
+Procedure HEAPIFY(A, N, I)
+    Set LARGEST = I
+    Set LEFT = 2 * I + 1
+    Set RIGHT = 2 * I + 2
+    
+    If LEFT < N AND A[LEFT] > A[LARGEST] Then
+        Set LARGEST = LEFT
+    End If
+    If RIGHT < N AND A[RIGHT] > A[LARGEST] Then
+        Set LARGEST = RIGHT
+    End If
+    
+    If LARGEST ≠ I Then
+        Swap A[I] and A[LARGEST]
+        Call HEAPIFY(A, N, LARGEST)
+    End If
+End Procedure
+
+Procedure HEAPSORT(A, N)
+    For I = (N / 2) - 1 down to 0 do
+        Call HEAPIFY(A, N, I)
+    End For
+    
+    For I = N - 1 down to 1 do
+        Swap A[0] and A[I]
+        Call HEAPIFY(A, I, 0)
+    End For
+End Procedure
 ```
 
 ### Complexity

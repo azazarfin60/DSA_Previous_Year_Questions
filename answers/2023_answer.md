@@ -27,6 +27,24 @@
 
 ## Q.1(b) Complete BinarySearch recursive function + time complexity. (CLO3, 06)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int l, int h, int x) {
+    if (l > h) {
+        return -1;                              // not found
+    }
+    int mid = l + (h - l) / 2;
+    if (A[mid] == x) {
+        return mid;                             // found at mid
+    } else if (x < A[mid]) {
+        return binarySearch(A, l, mid - 1, x);  // search left
+    } else {
+        return binarySearch(A, mid + 1, h, x);  // search right
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BinarySearch(A, l, h, x)
     If l > h Then
@@ -187,6 +205,22 @@ Remove index 5 (LL), LEFT = (5+1) mod 8 = 6
 
 ## Q.3(b) Insertion sort: 77,33,44,11,88,22,66,55. (CLO2, 05)
 
+**C++ Style:**
+```cpp
+void insertionSort(int A[], int N) {
+    for (int I = 1; I < N; I++) {
+        int KEY = A[I];
+        int J = I - 1;
+        while (J >= 0 && A[J] > KEY) {
+            A[J+1] = A[J];
+            J = J - 1;
+        }
+        A[J+1] = KEY;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERTION_SORT(A, N)
     For I = 2 to N do
@@ -234,6 +268,29 @@ End Procedure
 
 ## Q.4(a) C function to split linked list at point loc. (CLO4, 04)
 
+**C++ Style:**
+```cpp
+void splitList(Node* inList, int loc, Node*& outList1, Node*& outList2) {
+    outList1 = inList;
+    Node* PTR = inList;
+    int COUNT = 1;
+
+    // Traverse to the loc-th node
+    while (COUNT < loc && PTR != nullptr) {
+        PTR = PTR->link;
+        COUNT++;
+    }
+
+    if (PTR != nullptr) {
+        outList2 = PTR->link;       // second list starts after loc
+        PTR->link = nullptr;        // terminate first list
+    } else {
+        outList2 = nullptr;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure SPLIT_LIST(inList, loc, outList1, outList2)
     // Split inList into outList1 (first loc nodes) and outList2 (rest)

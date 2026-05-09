@@ -179,12 +179,12 @@ Despite OBE changes, these classic questions persist:
 
 ### CO2 Questions (Design & Analysis) — ~36% of marks
 **Strategy:** Practice step-by-step traces. Highest mark share.
-- [ ] BST construction, traversal, deletion (CRITICAL)
+- [x] BST construction, traversal, deletion (CRITICAL)
 - [ ] Heap build + insert + delete
-- [ ] Time complexity analysis of loops
+- [x] Time complexity analysis of loops
 - [ ] Sorting algorithm traces
 - [ ] Hashing with chaining/probing
-- [ ] MST (Prim's and Kruskal's)
+- [x] MST (Prim's and Kruskal's)
 - [ ] Recurrence solving (substitution/Master theorem)
 - [ ] Linked list operations
 

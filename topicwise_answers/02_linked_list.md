@@ -106,6 +106,29 @@ With header: insert after header — no pointer change needed for START.
 
 ## [2023] Q.4(a) C function to split linked list at point loc. (CLO4, 04)
 
+**C++ Style:**
+```cpp
+void splitList(Node* inList, int loc, Node*& outList1, Node*& outList2) {
+    outList1 = inList;
+    Node* PTR = inList;
+    int COUNT = 1;
+
+    // Traverse to the loc-th node
+    while (COUNT < loc && PTR != nullptr) {
+        PTR = PTR->link;
+        COUNT++;
+    }
+
+    if (PTR != nullptr) {
+        outList2 = PTR->link;       // second list starts after loc
+        PTR->link = nullptr;        // terminate first list
+    } else {
+        outList2 = nullptr;
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure SPLIT_LIST(inList, loc, outList1, outList2)
     // Split inList into outList1 (first loc nodes) and outList2 (rest)
@@ -153,6 +176,21 @@ End Procedure
 
 ## [2024] Q.2(c) Insert into linked list after LOC. (CO2, 03)
 
+**C++ Style:**
+```cpp
+void insertAfter(Node* START, Node* LOC, int ITEM) {
+    if (LOC == nullptr) {
+        cout << "Location cannot be NULL" << endl;
+        return;
+    }
+    Node* NEW = new Node;              // dynamically allocate new node
+    NEW->data = ITEM;                  // store data
+    NEW->link = LOC->link;             // new node points to LOC's next
+    LOC->link = NEW;                   // LOC now points to new node
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_AFTER(START, LOC, ITEM, AVAIL)
     If AVAIL = NULL Then
@@ -180,6 +218,23 @@ After:  [10] → [20] → [25] → [30] → NULL
 
 ## [2024] Q.6(b) Reverse a singly linked list. (CO1, 04)
 
+**C++ Style:**
+```cpp
+Node* reverseList(Node* HEAD) {
+    Node* PREV = nullptr;
+    Node* CURR = HEAD;
+    while (CURR != nullptr) {
+        Node* NEXT_NODE = CURR->link;  // save next
+        CURR->link = PREV;             // reverse pointer
+        PREV = CURR;                   // advance PREV
+        CURR = NEXT_NODE;              // advance CURR
+    }
+    HEAD = PREV;                       // new head
+    return HEAD;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure REVERSE_LIST(HEAD)
     Set PREV = NULL

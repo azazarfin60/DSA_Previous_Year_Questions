@@ -59,6 +59,22 @@ REAR:  index of the rear element (initially -1)
 
 ### 3.2 Enqueue (Insert at Rear)
 
+**C++ Style:**
+```cpp
+void enqueue(int QUEUE[], int& FRONT, int& REAR, int MAXSIZE, int ITEM) {
+    if (REAR == MAXSIZE - 1) { // Assuming 0-indexed array
+        cout << "OVERFLOW - Queue is full" << endl;
+        return;
+    }
+    if (FRONT == -1) {
+        FRONT = 0;
+    }
+    REAR = REAR + 1;
+    QUEUE[REAR] = ITEM;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure ENQUEUE(QUEUE, FRONT, REAR, MAXSIZE, ITEM)
     // Step 1: Check overflow
@@ -80,6 +96,28 @@ End Procedure
 
 ### 3.3 Dequeue (Remove from Front)
 
+**C++ Style:**
+```cpp
+int dequeue(int QUEUE[], int& FRONT, int& REAR) {
+    if (FRONT == -1 || FRONT > REAR) {
+        cout << "UNDERFLOW - Queue is empty" << endl;
+        return -1;
+    }
+    
+    int ITEM = QUEUE[FRONT];
+    FRONT = FRONT + 1;
+    
+    // Reset if queue becomes empty
+    if (FRONT > REAR) {
+        FRONT = -1;
+        REAR = -1;
+    }
+    
+    return ITEM;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DEQUEUE(QUEUE, FRONT, REAR)
     // Step 1: Check underflow
@@ -163,6 +201,28 @@ The `%` (modulo) operator makes the index wrap around:
 ### 4.3 Circular Queue Operations
 
 **Enqueue:**
+**C++ Style:**
+```cpp
+void cqEnqueue(int QUEUE[], int& FRONT, int& REAR, int MAXSIZE, int ITEM) {
+    // Check if full
+    if ((REAR + 1) % MAXSIZE == FRONT) {
+        cout << "OVERFLOW - Queue is full" << endl;
+        return;
+    }
+    
+    // First insertion
+    if (FRONT == -1) {
+        FRONT = 0;
+        REAR = 0;
+    } else {
+        REAR = (REAR + 1) % MAXSIZE; // wrap around
+    }
+    
+    QUEUE[REAR] = ITEM;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure CQ_ENQUEUE(QUEUE, FRONT, REAR, MAXSIZE, ITEM)
     // Check if full
@@ -184,6 +244,30 @@ End Procedure
 ```
 
 **Dequeue:**
+**C++ Style:**
+```cpp
+int cqDequeue(int QUEUE[], int& FRONT, int& REAR, int MAXSIZE) {
+    // Check if empty
+    if (FRONT == -1) {
+        cout << "UNDERFLOW - Queue is empty" << endl;
+        return -1;
+    }
+    
+    int ITEM = QUEUE[FRONT];
+    
+    // If only one element was left
+    if (FRONT == REAR) {
+        FRONT = -1;
+        REAR = -1;
+    } else {
+        FRONT = (FRONT + 1) % MAXSIZE; // wrap around
+    }
+    
+    return ITEM;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure CQ_DEQUEUE(QUEUE, FRONT, REAR, MAXSIZE)
     // Check if empty

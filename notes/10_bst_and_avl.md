@@ -152,6 +152,18 @@ Traversal means visiting every node in the tree exactly once. There are three de
 
 ### 4.1 Inorder Traversal (Left → Root → Right)
 
+**C++ Style:**
+```cpp
+void inorder(Node* root) {
+    if (root != nullptr) {
+        inorder(root->left);       // visit left subtree
+        cout << root->data << " "; // visit root
+        inorder(root->right);      // visit right subtree
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INORDER(node)
     If node ≠ NULL Then
@@ -213,6 +225,18 @@ Output: 10 20 30 35 40 50 60 70 80
 
 ### 4.2 Preorder Traversal (Root → Left → Right)
 
+**C++ Style:**
+```cpp
+void preorder(Node* root) {
+    if (root != nullptr) {
+        cout << root->data << " "; // visit root FIRST
+        preorder(root->left);      // visit left subtree
+        preorder(root->right);     // visit right subtree
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure PREORDER(node)
     If node ≠ NULL Then
@@ -229,6 +253,18 @@ End Procedure
 
 ### 4.3 Postorder Traversal (Left → Right → Root)
 
+**C++ Style:**
+```cpp
+void postorder(Node* root) {
+    if (root != nullptr) {
+        postorder(root->left);     // visit left subtree
+        postorder(root->right);    // visit right subtree
+        cout << root->data << " "; // visit root LAST
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure POSTORDER(node)
     If node ≠ NULL Then
@@ -247,6 +283,29 @@ End Procedure
 
 Visit nodes level by level, left to right. Uses a **queue**.
 
+**C++ Style:**
+```cpp
+#include <queue>
+
+void levelOrder(Node* root) {
+    if (root == nullptr) return;
+    
+    queue<Node*> q;
+    q.push(root);
+    
+    while (!q.empty()) {
+        Node* curr = q.front();
+        q.pop();
+        
+        cout << curr->data << " ";
+        
+        if (curr->left != nullptr) q.push(curr->left);
+        if (curr->right != nullptr) q.push(curr->right);
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure LEVEL_ORDER(root)
     Create empty Queue Q

@@ -59,23 +59,49 @@ V[1][0]=0 = V[0][0]=0, so item 1 NOT taken.
 **Selected items: 2 and 3** (weight=3+4=7, value=4+5=9) ✅
 
 ### Pseudocode
-```c
-int knapsack01(int W, int wt[], int val[], int n) {
-    int V[n+1][W+1];
-    int i, w;
+**C++ Style:**
+```cpp
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int knapsack01(int W, const vector<int>& wt, const vector<int>& val, int n) {
+    vector<vector<int>> V(n + 1, vector<int>(W + 1, 0));
     
-    for (i = 0; i <= n; i++) {
-        for (w = 0; w <= W; w++) {
-            if (i == 0 || w == 0)
+    for (int i = 0; i <= n; i++) {
+        for (int w = 0; w <= W; w++) {
+            if (i == 0 || w == 0) {
                 V[i][w] = 0;
-            else if (wt[i-1] <= w)
-                V[i][w] = max(val[i-1] + V[i-1][w-wt[i-1]], V[i-1][w]);
-            else
-                V[i][w] = V[i-1][w];
+            } else if (wt[i - 1] <= w) {
+                V[i][w] = max(val[i - 1] + V[i - 1][w - wt[i - 1]], V[i - 1][w]);
+            } else {
+                V[i][w] = V[i - 1][w];
+            }
         }
     }
     return V[n][W];
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure KNAPSACK_01(W, wt, val, n)
+    Create table V[0..n, 0..W]
+    
+    For i = 0 to n do
+        For w = 0 to W do
+            If i = 0 OR w = 0 Then
+                V[i][w] = 0
+            Else If wt[i-1] <= w Then
+                V[i][w] = MAX(val[i-1] + V[i-1][w - wt[i-1]], V[i-1][w])
+            Else
+                V[i][w] = V[i-1][w]
+            End If
+        End For
+    End For
+    
+    Return V[n][W]
+End Procedure
 ```
 
 **Complexity:** Time O(nW), Space O(nW)
@@ -186,37 +212,81 @@ Board:     . Q . .         Solution positions: (0,1), (1,3), (2,0), (3,2)
 Place queens row by row. For each row, try each column. If safe (no conflict), move to next row. If no column works, **backtrack** to the previous row.
 
 ### Algorithm
-```c
-int isSafe(int board[][N], int row, int col) {
-    int i, j;
+**C++ Style:**
+```cpp
+#include <vector>
+using namespace std;
+
+bool isSafe(const vector<vector<int>>& board, int row, int col, int N) {
     // Check column above
-    for (i = 0; i < row; i++)
-        if (board[i][col]) return 0;
+    for (int i = 0; i < row; i++)
+        if (board[i][col]) return false;
     
     // Check upper-left diagonal
-    for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-        if (board[i][j]) return 0;
+    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (board[i][j]) return false;
     
     // Check upper-right diagonal
-    for (i = row, j = col; i >= 0 && j < N; i--, j++)
-        if (board[i][j]) return 0;
+    for (int i = row, j = col; i >= 0 && j < N; i--, j++)
+        if (board[i][j]) return false;
     
-    return 1;
+    return true;
 }
 
-int solveNQueens(int board[][N], int row) {
-    if (row == N) return 1;              // all queens placed
+bool solveNQueens(vector<vector<int>>& board, int row, int N) {
+    if (row == N) return true;              // all queens placed
     
     for (int col = 0; col < N; col++) {
-        if (isSafe(board, row, col)) {
+        if (isSafe(board, row, col, N)) {
             board[row][col] = 1;         // place queen
-            if (solveNQueens(board, row + 1))
-                return 1;               // solved!
+            if (solveNQueens(board, row + 1, N))
+                return true;               // solved!
             board[row][col] = 0;         // backtrack
         }
     }
-    return 0;                            // no solution in this config
+    return false;                            // no solution in this config
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure IS_SAFE(board, row, col, N)
+    // Check column above
+    For i = 0 to row - 1 do
+        If board[i][col] == 1 Then Return FALSE
+    
+    // Check upper-left diagonal
+    i = row, j = col
+    While i >= 0 AND j >= 0 do
+        If board[i][j] == 1 Then Return FALSE
+        i = i - 1, j = j - 1
+    
+    // Check upper-right diagonal
+    i = row, j = col
+    While i >= 0 AND j < N do
+        If board[i][j] == 1 Then Return FALSE
+        i = i - 1, j = j + 1
+        
+    Return TRUE
+End Procedure
+
+Procedure SOLVE_N_QUEENS(board, row, N)
+    If row == N Then
+        Return TRUE    // All queens placed
+    End If
+    
+    For col = 0 to N - 1 do
+        If Call IS_SAFE(board, row, col, N) Then
+            Set board[row][col] = 1
+            If Call SOLVE_N_QUEENS(board, row + 1, N) Then
+                Return TRUE
+            End If
+            Set board[row][col] = 0    // backtrack
+        End If
+    End For
+    
+    Return FALSE
+End Procedure
 ```
 
 ### State Space Tree for 4-Queens (partial)

@@ -88,6 +88,28 @@ Level 3: [30] [20]            [50] [10]
 
 ## Q.2(b) Algorithm of binary search. (04)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int N, int ITEM) {
+    int BEG = 0; // 0-indexed for C++
+    int END = N - 1;
+    while (BEG <= END) {
+        int MID = BEG + (END - BEG) / 2;
+        if (A[MID] == ITEM) {
+            cout << "Found at position " << MID << endl;
+            return MID;
+        } else if (ITEM < A[MID]) {
+            END = MID - 1;          // search left half
+        } else {
+            BEG = MID + 1;          // search right half
+        }
+    }
+    cout << "Item not found" << endl;
+    return -1;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(A, N, ITEM)
     // A = sorted array, N = size, ITEM = element to find

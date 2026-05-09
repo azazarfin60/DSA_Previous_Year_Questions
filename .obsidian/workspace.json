@@ -13,12 +13,68 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "boss_notes/README.md",
+                "file": "topicwise_answers/02_linked_list.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "02_linked_list"
+            }
+          },
+          {
+            "id": "6780e9f41c2394ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/03_linked_lists.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "03_linked_lists"
+            }
+          },
+          {
+            "id": "8ef07513d5d0454c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Analysis_Report(2017-2024).md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Analysis_Report(2017-2024)"
+            }
+          },
+          {
+            "id": "3d09a870c09870b7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Analysis_Report_OBE(2022-24).md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Analysis_Report_OBE(2022-24)"
+            }
+          },
+          {
+            "id": "2056c32e5e34f0ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DSAClassnote_Context/pagecontext03.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "pagecontext03"
             }
           }
         ]
@@ -78,7 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 393.5
   },
   "right": {
     "id": "454d7652cf26a08e",
@@ -94,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "boss_notes/README.md",
+                "file": "topicwise_answers/02_linked_list.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +160,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for 02_linked_list"
             }
           },
           {
@@ -113,12 +169,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "boss_notes/README.md",
+                "file": "topicwise_answers/02_linked_list.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from 02_linked_list"
             }
           },
           {
@@ -156,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "boss_notes/README.md",
+                "file": "topicwise_answers/02_linked_list.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of 02_linked_list"
             }
           }
         ]
@@ -185,6 +241,21 @@
   },
   "active": "65508480a4bfd018",
   "lastOpenFiles": [
+    "notes/03_linked_lists.md",
+    "pseudocodemap.md",
+    "topicwise_answers/02_linked_list.md",
+    "scratch/map_pseudocode.py",
+    "scratch",
+    "topicwise_answers/01_ds_definitions.md",
+    "boss_notes/1.8_Linked_List_Operations.md",
+    "DSAClassnote_Context/pagecontext03.md",
+    "DSAClassnote_Context/pagecontext02.md",
+    "DSAClassnote_Context/pagecontext01.md",
+    "Analysis_Report_OBE(2022-24).md",
+    "Analysis_Report(2017-2024).md",
+    "boss_notes/1.5_Types_of_Linked_List.md",
+    "boss_notes/2.7_Address_Calculation_in_2D_Array.md",
+    "boss_notes/README.md",
     "boss_notes/12.1_Hashing.md",
     "boss_notes/5.16_B-Tree.md",
     "boss_notes/5.14_AVL_Tree.md",
@@ -192,8 +263,6 @@
     "boss_notes/3.8_Infix_Prefix_and_Postfix_Expressions.md",
     "boss_notes/3.3_Stack_Representation.md",
     "boss_notes/2.9_Array_Operations.md",
-    "boss_notes/2.7_Address_Calculation_in_2D_Array.md",
-    "boss_notes/1.8_Linked_List_Operations.md",
     "notes/04_stacks.md",
     "convert_pseudocode.py",
     "questions/2020.md",
@@ -201,11 +270,7 @@
     "questions/2017.md",
     "answers/README.md",
     "answers/2018_answer.md",
-    "answers/2017_answer.md",
-    "DSAClassnote_Context/README.md",
     "add_nav_all_folders.py",
-    "boss_notes/1.5_Types_of_Linked_List.md",
-    "boss_notes/README.md",
     "build_index.py"
   ]
 }

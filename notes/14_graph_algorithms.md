@@ -16,6 +16,42 @@ Find the shortest path from a **source vertex** to all other vertices in a **wei
 
 ### Algorithm (Greedy)
 
+**C++ Style:**
+```cpp
+#include <vector>
+#include <queue>
+
+void dijkstra(int V, vector<vector<pair<int, int>>>& adj, int source) {
+    vector<int> dist(V, 1e9);
+    vector<int> prev(V, -1);
+    // Min-heap stores {distance, vertex}
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    
+    dist[source] = 0;
+    pq.push({0, source});
+    
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        int d = pq.top().first;
+        pq.pop();
+        
+        if (d > dist[u]) continue; // Skip outdated pairs
+        
+        for (auto& edge : adj[u]) {
+            int v = edge.first;
+            int weight = edge.second;
+            
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                prev[v] = u;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DIJKSTRA(G, source)
     For each vertex v do
@@ -135,6 +171,38 @@ Find shortest paths from source to all vertices, works with **negative edge weig
 
 ### Algorithm
 
+**C++ Style:**
+```cpp
+#include <vector>
+
+struct Edge {
+    int u, v, weight;
+};
+
+void bellmanFord(int V, int E, vector<Edge>& edges, int source) {
+    vector<int> dist(V, 1e9);
+    dist[source] = 0;
+    
+    // Relax all edges V-1 times
+    for (int i = 1; i <= V - 1; i++) {
+        for (const auto& edge : edges) {
+            if (dist[edge.u] != 1e9 && dist[edge.u] + edge.weight < dist[edge.v]) {
+                dist[edge.v] = dist[edge.u] + edge.weight;
+            }
+        }
+    }
+    
+    // Check for negative weight cycles
+    for (const auto& edge : edges) {
+        if (dist[edge.u] != 1e9 && dist[edge.u] + edge.weight < dist[edge.v]) {
+            cout << "Negative weight cycle exists!" << endl;
+            return;
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BELLMAN_FORD(G, source)
     For each vertex v do
@@ -231,6 +299,50 @@ You want to connect all cities with roads using the **least total road length**.
 Start from any vertex. At each step, add the **cheapest edge** that connects a visited vertex to an unvisited vertex.
 
 ### Algorithm
+**C++ Style:**
+```cpp
+#include <vector>
+#include <queue>
+
+void primMST(int V, vector<vector<pair<int, int>>>& adj, int start) {
+    vector<bool> visited(V, false);
+    // Min-heap stores {weight, {u, v}}
+    priority_queue<pair<int, pair<int, int>>, 
+                   vector<pair<int, pair<int, int>>>, 
+                   greater<pair<int, pair<int, int>>>> pq;
+    
+    visited[start] = true;
+    for (auto& edge : adj[start]) {
+        pq.push({edge.second, {start, edge.first}});
+    }
+    
+    int mstWeight = 0;
+    int edgesAdded = 0;
+    
+    while (!pq.empty() && edgesAdded < V - 1) {
+        auto curr = pq.top();
+        pq.pop();
+        
+        int w = curr.first;
+        int u = curr.second.first;
+        int v = curr.second.second;
+        
+        if (visited[v]) continue; // Skip if already visited
+        
+        visited[v] = true;
+        mstWeight += w;
+        edgesAdded++;
+        
+        for (auto& edge : adj[v]) {
+            if (!visited[edge.first]) {
+                pq.push({edge.second, {v, edge.first}});
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure PRIM(G, start)
     Set MST = empty set
@@ -295,6 +407,58 @@ MST:
 Sort all edges by weight. Add edges one by one (smallest first), **skipping any edge that would create a cycle**.
 
 ### Algorithm
+**C++ Style:**
+```cpp
+#include <vector>
+#include <algorithm>
+
+struct Edge {
+    int u, v, weight;
+    bool operator<(const Edge& other) const {
+        return weight < other.weight;
+    }
+};
+
+int findParent(int node, vector<int>& parent) {
+    if (parent[node] == node) return node;
+    return parent[node] = findParent(parent[node], parent); // Path compression
+}
+
+void unionSets(int u, int v, vector<int>& parent, vector<int>& rank) {
+    int rootU = findParent(u, parent);
+    int rootV = findParent(v, parent);
+    if (rootU != rootV) {
+        if (rank[rootU] < rank[rootV]) parent[rootU] = rootV;
+        else if (rank[rootU] > rank[rootV]) parent[rootV] = rootU;
+        else {
+            parent[rootV] = rootU;
+            rank[rootU]++;
+        }
+    }
+}
+
+void kruskalMST(int V, vector<Edge>& edges) {
+    sort(edges.begin(), edges.end()); // Sort edges ascending by weight
+    
+    vector<int> parent(V);
+    vector<int> rank(V, 0);
+    for (int i = 0; i < V; i++) parent[i] = i;
+    
+    int mstWeight = 0;
+    int edgesAdded = 0;
+    
+    for (auto& edge : edges) {
+        if (findParent(edge.u, parent) != findParent(edge.v, parent)) {
+            mstWeight += edge.weight;
+            unionSets(edge.u, edge.v, parent, rank);
+            edgesAdded++;
+            if (edgesAdded == V - 1) break; // tree complete
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure KRUSKAL(G)
     Sort all edges by weight (ascending)

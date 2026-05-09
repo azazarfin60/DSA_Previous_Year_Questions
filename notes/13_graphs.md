@@ -142,6 +142,34 @@ BFS explores a graph **level by level** — visit all neighbors of the current v
 Think of **ripples in a pond** — when you drop a stone, waves spread outward in concentric circles. BFS visits nodes in order of their distance from the starting point.
 
 ### Algorithm
+**C++ Style:**
+```cpp
+#include <queue>
+#include <vector>
+
+void BFS(vector<vector<int>>& adj, int V, int start) {
+    vector<bool> visited(V, false);
+    queue<int> q;
+    
+    visited[start] = true;
+    q.push(start);
+    
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cout << u << " "; // Process u
+        
+        for (int v : adj[u]) {
+            if (!visited[v]) {
+                visited[v] = true;
+                q.push(v);
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BFS(G, start)
     Create Queue Q
@@ -230,6 +258,23 @@ DFS explores a graph by going as **deep as possible** along each branch before *
 Think of exploring a **maze** — you go down one path as far as possible, and when you hit a dead end, you backtrack to the last fork and try another path.
 
 ### Algorithm (Recursive)
+**C++ Style:**
+```cpp
+#include <vector>
+
+void DFS(vector<vector<int>>& adj, int u, vector<bool>& visited) {
+    visited[u] = true;
+    cout << u << " "; // Process u
+    
+    for (int v : adj[u]) {
+        if (!visited[v]) {
+            DFS(adj, v, visited);
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DFS(G, u, Visited)
     Set Visited[u] = TRUE
@@ -244,6 +289,38 @@ End Procedure
 ```
 
 ### Algorithm (Iterative with Stack)
+**C++ Style:**
+```cpp
+#include <stack>
+#include <vector>
+
+void dfsIterative(vector<vector<int>>& adj, int V, int start) {
+    vector<bool> visited(V, false);
+    stack<int> s;
+    
+    s.push(start);
+    
+    while (!s.empty()) {
+        int u = s.top();
+        s.pop();
+        
+        if (!visited[u]) {
+            visited[u] = true;
+            cout << u << " "; // Process u
+            
+            // Push neighbors in reverse order so they are visited in normal order
+            for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {
+                int v = *it;
+                if (!visited[v]) {
+                    s.push(v);
+                }
+            }
+        }
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure DFS_ITERATIVE(G, start)
     Create Stack S

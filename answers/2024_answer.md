@@ -30,6 +30,19 @@
 
 **Linear Search:** Scans each element one by one until the target is found or the array ends.
 
+**C++ Style:**
+```cpp
+int linearSearch(int A[], int N, int ITEM) {
+    for (int I = 0; I < N; I++) {
+        if (A[I] == ITEM) {
+            return I;
+        }
+    }
+    return -1;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure LINEAR_SEARCH(A, N, ITEM)
     For I = 1 to N do
@@ -58,6 +71,18 @@ A recursive procedure must satisfy:
 3. **Self-similarity:** The problem at each level must have the same structure as the original, solvable by the same method.
 
 **Example — Factorial:**
+**C++ Style:**
+```cpp
+int factorial(int N) {
+    if (N <= 1) {
+        return 1;                       // base case
+    } else {
+        return N * factorial(N - 1);    // smaller problem
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure FACTORIAL(N)
     If N <= 1 Then
@@ -114,6 +139,21 @@ FACTORIAL(4) = 4 × 3 × 2 × 1 = 24
 
 ## Q.2(c) Insert into linked list after LOC. (CO2, 03)
 
+**C++ Style:**
+```cpp
+void insertAfter(Node* START, Node* LOC, int ITEM) {
+    if (LOC == nullptr) {
+        cout << "Location cannot be NULL" << endl;
+        return;
+    }
+    Node* NEW = new Node;              // dynamically allocate new node
+    NEW->data = ITEM;                  // store data
+    NEW->link = LOC->link;             // new node points to LOC's next
+    LOC->link = NEW;                   // LOC now points to new node
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_AFTER(START, LOC, ITEM, AVAIL)
     If AVAIL = NULL Then
@@ -437,6 +477,23 @@ Subarray: N, L, S, H
 
 ## Q.6(b) Reverse a singly linked list. (CO1, 04)
 
+**C++ Style:**
+```cpp
+Node* reverseList(Node* HEAD) {
+    Node* PREV = nullptr;
+    Node* CURR = HEAD;
+    while (CURR != nullptr) {
+        Node* NEXT_NODE = CURR->link;  // save next
+        CURR->link = PREV;             // reverse pointer
+        PREV = CURR;                   // advance PREV
+        CURR = NEXT_NODE;              // advance CURR
+    }
+    HEAD = PREV;                       // new head
+    return HEAD;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure REVERSE_LIST(HEAD)
     Set PREV = NULL

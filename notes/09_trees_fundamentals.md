@@ -207,14 +207,34 @@ Max nodes at level 3 = 2³ = 8
 
 ### 4.3 Height Calculation Algorithm
 
-```c
-int height(struct Node* root) {
-    if (root == NULL)
+**C++ Style:**
+```cpp
+#include <algorithm>
+
+int height(Node* root) {
+    if (root == nullptr) {
         return -1;                    // empty tree has height -1
+    }
     int leftH = height(root->left);
     int rightH = height(root->right);
-    return 1 + max(leftH, rightH);    // 1 + taller subtree
+    return 1 + std::max(leftH, rightH);    // 1 + taller subtree
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure HEIGHT(root)
+    If root = NULL Then
+        Return -1
+    End If
+    Set LEFT_H = Call HEIGHT(root.left)
+    Set RIGHT_H = Call HEIGHT(root.right)
+    If LEFT_H > RIGHT_H Then
+        Return 1 + LEFT_H
+    Else
+        Return 1 + RIGHT_H
+    End If
+End Procedure
 ```
 
 **Trace:**

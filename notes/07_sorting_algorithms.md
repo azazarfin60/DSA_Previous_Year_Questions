@@ -39,19 +39,32 @@ Repeatedly **compare adjacent elements** and **swap** them if they are in the wr
 Think of bubbles in water — the largest bubble rises to the top first. Similarly, the largest element moves to the end after each pass.
 
 ### Algorithm
-```c
+**C++ Style:**
+```cpp
 void bubbleSort(int A[], int N) {
-    int i, j, temp;
-    for (i = 0; i < N - 1; i++) {           // N-1 passes
-        for (j = 0; j < N - 1 - i; j++) {   // compare adjacent
-            if (A[j] > A[j + 1]) {           // wrong order?
-                temp = A[j];                  // swap
+    for (int i = 0; i < N - 1; i++) {           // N-1 passes
+        for (int j = 0; j < N - 1 - i; j++) {   // compare adjacent
+            if (A[j] > A[j + 1]) {               // wrong order?
+                int temp = A[j];                  // swap
                 A[j] = A[j + 1];
                 A[j + 1] = temp;
             }
         }
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure BUBBLE_SORT(A, N)
+    For I = 1 to N-1 do
+        For J = 1 to N-I do
+            If A[J] > A[J+1] Then
+                Swap A[J] and A[J+1]
+            End If
+        End For
+    End For
+End Procedure
 ```
 
 ### Trace: Sort [5, 3, 8, 1, 2]
@@ -105,21 +118,36 @@ Find the **minimum** element in the unsorted portion, and **swap** it with the f
 Like selecting the shortest person from a crowd and placing them first, then the next shortest, and so on.
 
 ### Algorithm
-```c
+**C++ Style:**
+```cpp
 void selectionSort(int A[], int N) {
-    int i, j, minIdx, temp;
-    for (i = 0; i < N - 1; i++) {
-        minIdx = i;                          // assume current is min
-        for (j = i + 1; j < N; j++) {
+    for (int i = 0; i < N - 1; i++) {
+        int minIdx = i;                          // assume current is min
+        for (int j = i + 1; j < N; j++) {
             if (A[j] < A[minIdx])
-                minIdx = j;                  // found smaller
+                minIdx = j;                      // found smaller
         }
         // Swap A[i] and A[minIdx]
-        temp = A[i];
+        int temp = A[i];
         A[i] = A[minIdx];
         A[minIdx] = temp;
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure SELECTION_SORT(A, N)
+    For I = 1 to N-1 do
+        Set MIN_IDX = I
+        For J = I+1 to N do
+            If A[J] < A[MIN_IDX] Then
+                Set MIN_IDX = J
+            End If
+        End For
+        Swap A[I] and A[MIN_IDX]
+    End For
+End Procedure
 ```
 
 ### Trace: Sort [29, 10, 14, 37, 13]
@@ -151,20 +179,35 @@ Build the sorted array one element at a time. Take each element and **insert** i
 Like **sorting playing cards** in your hand — you pick up one card at a time and slide it into the correct position among the cards you've already sorted.
 
 ### Algorithm
-```c
+**C++ Style:**
+```cpp
 void insertionSort(int A[], int N) {
-    int i, j, key;
-    for (i = 1; i < N; i++) {          // start from 2nd element
-        key = A[i];                     // element to insert
-        j = i - 1;
+    for (int i = 1; i < N; i++) {          // start from 2nd element
+        int key = A[i];                    // element to insert
+        int j = i - 1;
         // Shift elements greater than key to the right
         while (j >= 0 && A[j] > key) {
-            A[j + 1] = A[j];           // shift right
+            A[j + 1] = A[j];               // shift right
             j--;
         }
-        A[j + 1] = key;                // insert key
+        A[j + 1] = key;                    // insert key
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure INSERTION_SORT(A, N)
+    For I = 2 to N do
+        Set KEY = A[I]
+        Set J = I - 1
+        While J >= 1 AND A[J] > KEY do
+            Set A[J+1] = A[J]        // shift right
+            Set J = J - 1
+        End While
+        Set A[J+1] = KEY              // place KEY
+    End For
+End Procedure
 ```
 
 ### Trace: Sort [5, 2, 4, 6, 1, 3]
@@ -213,10 +256,11 @@ Think of sorting a deck of cards:
 
 ### Algorithm
 
-```c
+**C++ Style:**
+```cpp
 void mergeSort(int A[], int left, int right) {
     if (left < right) {
-        int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
         mergeSort(A, left, mid);          // sort left half
         mergeSort(A, mid + 1, right);     // sort right half
         merge(A, left, mid, right);       // merge both halves
@@ -224,17 +268,17 @@ void mergeSort(int A[], int left, int right) {
 }
 
 void merge(int A[], int left, int mid, int right) {
-    int i, j, k;
     int n1 = mid - left + 1;             // size of left half
     int n2 = right - mid;                 // size of right half
-    int L[n1], R[n2];                     // temp arrays
+    int* L = new int[n1];                 // temp arrays
+    int* R = new int[n2];
     
     // Copy data to temp arrays
-    for (i = 0; i < n1; i++) L[i] = A[left + i];
-    for (j = 0; j < n2; j++) R[j] = A[mid + 1 + j];
+    for (int i = 0; i < n1; i++) L[i] = A[left + i];
+    for (int j = 0; j < n2; j++) R[j] = A[mid + 1 + j];
     
     // Merge back
-    i = 0; j = 0; k = left;
+    int i = 0, j = 0, k = left;
     while (i < n1 && j < n2) {
         if (L[i] <= R[j])
             A[k++] = L[i++];
@@ -243,7 +287,37 @@ void merge(int A[], int left, int mid, int right) {
     }
     while (i < n1) A[k++] = L[i++];      // remaining from L
     while (j < n2) A[k++] = R[j++];      // remaining from R
+    
+    delete[] L;
+    delete[] R;
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure MERGE_SORT(A, LOW, HIGH)
+    If LOW < HIGH Then
+        Set MID = FLOOR((LOW + HIGH) / 2)
+        Call MERGE_SORT(A, LOW, MID)         // sort left half
+        Call MERGE_SORT(A, MID+1, HIGH)      // sort right half
+        Call MERGE(A, LOW, MID, HIGH)        // merge two halves
+    End If
+End Procedure
+
+Procedure MERGE(A, LOW, MID, HIGH)
+    Create temporary arrays L and R
+    Copy A[LOW..MID] into L, A[MID+1..HIGH] into R
+    Set I = 1, J = 1, K = LOW
+    While I <= size(L) AND J <= size(R) do
+        If L[I] <= R[J] Then
+            Set A[K] = L[I], I = I + 1
+        Else
+            Set A[K] = R[J], J = J + 1
+        End If
+        Set K = K + 1
+    End While
+    Copy remaining elements of L or R into A
+End Procedure
 ```
 
 ### Trace: Sort [38, 27, 43, 3, 9, 82, 10]
@@ -304,7 +378,8 @@ Like organizing a group by height — pick one person (pivot), everyone shorter 
 
 ### Algorithm
 
-```c
+**C++ Style:**
+```cpp
 void quickSort(int A[], int low, int high) {
     if (low < high) {
         int pi = partition(A, low, high);    // partition and get pivot index
@@ -316,18 +391,41 @@ void quickSort(int A[], int low, int high) {
 int partition(int A[], int low, int high) {
     int pivot = A[high];                     // choose last element as pivot
     int i = low - 1;                         // index of smaller element boundary
-    int j, temp;
     
-    for (j = low; j < high; j++) {
+    for (int j = low; j < high; j++) {
         if (A[j] <= pivot) {
             i++;                             // expand boundary
-            temp = A[i]; A[i] = A[j]; A[j] = temp;  // swap
+            int temp = A[i]; A[i] = A[j]; A[j] = temp;  // swap
         }
     }
     // Place pivot in correct position
-    temp = A[i + 1]; A[i + 1] = A[high]; A[high] = temp;
+    int temp = A[i + 1]; A[i + 1] = A[high]; A[high] = temp;
     return i + 1;                            // pivot's final position
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure QUICK_SORT(A, LOW, HIGH)
+    If LOW < HIGH Then
+        Set PI = PARTITION(A, LOW, HIGH)
+        Call QUICK_SORT(A, LOW, PI - 1)
+        Call QUICK_SORT(A, PI + 1, HIGH)
+    End If
+End Procedure
+
+Procedure PARTITION(A, LOW, HIGH)
+    Set PIVOT = A[HIGH]
+    Set I = LOW - 1
+    For J = LOW to HIGH - 1 do
+        If A[J] <= PIVOT Then
+            Set I = I + 1
+            Swap A[I] and A[J]
+        End If
+    End For
+    Swap A[I + 1] and A[HIGH]
+    Return I + 1
+End Procedure
 ```
 
 ### Detailed Trace: Sort [10, 80, 30, 90, 40, 50, 70]

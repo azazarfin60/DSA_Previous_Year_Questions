@@ -21,6 +21,25 @@
 
 ## Q.1(b) Binary search recursive pseudocode + time complexity. (05)
 
+**C++ Style:**
+```cpp
+int binarySearch(int A[], int BEG, int END, int ITEM) {
+    if (BEG > END) {
+        cout << "Item not found" << endl;
+        return -1;
+    }
+    int MID = BEG + (END - BEG) / 2;
+    if (A[MID] == ITEM) {
+        return MID;                              // found
+    } else if (ITEM < A[MID]) {
+        return binarySearch(A, BEG, MID - 1, ITEM);  // left half
+    } else {
+        return binarySearch(A, MID + 1, END, ITEM);  // right half
+    }
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure BINARY_SEARCH(A, BEG, END, ITEM)
     If BEG > END Then
@@ -89,6 +108,21 @@ Proper data structure choice saves both time and space.
 
 ## Q.2(c) Insert into linked list after node at LOC. (03)
 
+**C++ Style:**
+```cpp
+void insertAfter(Node* START, Node* LOC, int ITEM) {
+    if (LOC == nullptr) {
+        cout << "Location cannot be NULL" << endl;
+        return;
+    }
+    Node* NEW = new Node;                // dynamically allocate new node
+    NEW->data = ITEM;                    // store data
+    NEW->link = LOC->link;               // new node points to LOC's next
+    LOC->link = NEW;                     // LOC now points to new node
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure INSERT_AFTER(START, LOC, ITEM, AVAIL)
     // Insert ITEM after the node at location LOC
@@ -114,6 +148,53 @@ After:  ... → [20|→25] → [25|→30] → [30|→40] → ...
 
 ## Q.2(d) Pseudocode for adding two polynomials. (04)
 
+**C++ Style:**
+```cpp
+Node* addPolynomials(Node* P1, Node* P2) {
+    Node* PTR1 = P1;
+    Node* PTR2 = P2;
+    Node* RESULT = nullptr;
+    Node* TAIL = nullptr;
+
+    auto append = [&](int coeff, int expo) {
+        Node* newNode = new Node{coeff, expo, nullptr};
+        if (!RESULT) {
+            RESULT = newNode;
+            TAIL = newNode;
+        } else {
+            TAIL->link = newNode;
+            TAIL = newNode;
+        }
+    };
+
+    while (PTR1 != nullptr && PTR2 != nullptr) {
+        if (PTR1->expo == PTR2->expo) {
+            int sum = PTR1->coeff + PTR2->coeff;
+            if (sum != 0) append(sum, PTR1->expo);
+            PTR1 = PTR1->link;
+            PTR2 = PTR2->link;
+        } else if (PTR1->expo > PTR2->expo) {
+            append(PTR1->coeff, PTR1->expo);
+            PTR1 = PTR1->link;
+        } else {
+            append(PTR2->coeff, PTR2->expo);
+            PTR2 = PTR2->link;
+        }
+    }
+
+    while (PTR1 != nullptr) {
+        append(PTR1->coeff, PTR1->expo);
+        PTR1 = PTR1->link;
+    }
+    while (PTR2 != nullptr) {
+        append(PTR2->coeff, PTR2->expo);
+        PTR2 = PTR2->link;
+    }
+    return RESULT;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure ADD_POLYNOMIALS(P1, P2)
     // P1, P2 are linked lists: each node has [COEFF | EXPO | NEXT]
@@ -558,6 +639,55 @@ Search for 24: go to index 3, traverse chain (3 comparisons).
 
 ## Q.7(c) Merge sort pseudocode + time complexity. (04)
 
+**C++ Style:**
+```cpp
+void mergeSort(int A[], int LOW, int HIGH) {
+    if (LOW < HIGH) {
+        int MID = LOW + (HIGH - LOW) / 2;
+        mergeSort(A, LOW, MID);         // sort left half
+        mergeSort(A, MID + 1, HIGH);    // sort right half
+        merge(A, LOW, MID, HIGH);       // merge two halves
+    }
+}
+
+void merge(int A[], int LOW, int MID, int HIGH) {
+    int n1 = MID - LOW + 1;
+    int n2 = HIGH - MID;
+    
+    int* L = new int[n1];
+    int* R = new int[n2];
+    
+    for(int i = 0; i < n1; i++) L[i] = A[LOW + i];
+    for(int j = 0; j < n2; j++) R[j] = A[MID + 1 + j];
+    
+    int I = 0, J = 0, K = LOW;
+    while (I < n1 && J < n2) {
+        if (L[I] <= R[J]) {
+            A[K] = L[I];
+            I++;
+        } else {
+            A[K] = R[J];
+            J++;
+        }
+        K++;
+    }
+    
+    while (I < n1) {
+        A[K] = L[I];
+        I++;
+        K++;
+    }
+    while (J < n2) {
+        A[K] = R[J];
+        J++;
+        K++;
+    }
+    delete[] L;
+    delete[] R;
+}
+```
+
+**OR, Textbook Style:**
 ```
 Procedure MERGE_SORT(A, LOW, HIGH)
     If LOW < HIGH Then

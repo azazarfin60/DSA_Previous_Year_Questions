@@ -368,34 +368,87 @@ Row  Col  Value        Row  Col  Value
 Then sort by row (and within same row, by column) for proper sparse representation.
 
 **Algorithm — Fast Transpose:**
-```c
-void fastTranspose(SparseMatrix a, SparseMatrix *b) {
-    int rowTerms[MAX_COL], startingPos[MAX_COL];
-    int i, j;
+**C++ Style:**
+```cpp
+#include <vector>
+using namespace std;
+
+const int MAX_COL = 100; // Arbitrary maximum for illustration
+
+struct Term {
+    int row;
+    int col;
+    int value;
+};
+
+struct SparseMatrix {
+    int rows;
+    int cols;
+    int terms;
+    vector<Term> data;
+};
+
+void fastTranspose(const SparseMatrix& a, SparseMatrix& b) {
+    vector<int> rowTerms(a.cols, 0);
+    vector<int> startingPos(a.cols, 0);
     
-    b->rows = a.cols;       // swap dimensions
-    b->cols = a.rows;
-    b->terms = a.terms;
+    b.rows = a.cols;       // swap dimensions
+    b.cols = a.rows;
+    b.terms = a.terms;
+    b.data.resize(a.terms);
     
     // Count elements in each column of 'a' (= row of 'b')
-    for (i = 0; i < a.cols; i++)
-        rowTerms[i] = 0;
-    for (i = 0; i < a.terms; i++)
+    for (int i = 0; i < a.terms; i++) {
         rowTerms[a.data[i].col]++;
+    }
     
     // Starting position of each row in 'b'
     startingPos[0] = 0;
-    for (i = 1; i < a.cols; i++)
-        startingPos[i] = startingPos[i-1] + rowTerms[i-1];
+    for (int i = 1; i < a.cols; i++) {
+        startingPos[i] = startingPos[i - 1] + rowTerms[i - 1];
+    }
     
     // Place each element in correct position
-    for (i = 0; i < a.terms; i++) {
-        j = startingPos[a.data[i].col]++;
-        b->data[j].row = a.data[i].col;
-        b->data[j].col = a.data[i].row;
-        b->data[j].value = a.data[i].value;
+    for (int i = 0; i < a.terms; i++) {
+        int j = startingPos[a.data[i].col]++;
+        b.data[j].row = a.data[i].col;
+        b.data[j].col = a.data[i].row;
+        b.data[j].value = a.data[i].value;
     }
 }
+```
+
+**OR, Textbook Style:**
+```
+Procedure FAST_TRANSPOSE(A, B)
+    Set B.rows = A.cols
+    Set B.cols = A.rows
+    Set B.terms = A.terms
+    
+    // Count elements in each column of A
+    For I = 0 to A.cols - 1 do
+        Set ROW_TERMS[I] = 0
+    End For
+    
+    For I = 0 to A.terms - 1 do
+        Set ROW_TERMS[A.data[I].col] = ROW_TERMS[A.data[I].col] + 1
+    End For
+    
+    // Calculate starting position of each row in B
+    Set STARTING_POS[0] = 0
+    For I = 1 to A.cols - 1 do
+        Set STARTING_POS[I] = STARTING_POS[I-1] + ROW_TERMS[I-1]
+    End For
+    
+    // Transpose
+    For I = 0 to A.terms - 1 do
+        Set J = STARTING_POS[A.data[I].col]
+        Set B.data[J].row = A.data[I].col
+        Set B.data[J].col = A.data[I].row
+        Set B.data[J].value = A.data[I].value
+        Set STARTING_POS[A.data[I].col] = STARTING_POS[A.data[I].col] + 1
+    End For
+End Procedure
 ```
 **Time Complexity:** O(columns + non-zero terms) = O(n + t)
 
