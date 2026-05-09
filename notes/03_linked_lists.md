@@ -1,3 +1,7 @@
+[⬅️ Previous](./02_arrays_and_matrices.md) | [🏠 Home](./README.md) | [Next ➡️](./04_stacks.md)
+
+---
+
 # 📘 Chapter 3: Linked Lists
 
 > **Exam Frequency:** 5/8 years | **Typical Marks:** 02–04 | **Section:** A
@@ -716,3 +720,8 @@ Second list: 40 → 50 → NULL
 ---
 
 *← [02 — Arrays and Matrices](02_arrays_and_matrices.md) | Next: [04 — Stacks →](04_stacks.md)*
+
+<br>
+
+---
+[⬅️ Previous](./02_arrays_and_matrices.md) | [🏠 Home](./README.md) | [Next ➡️](./04_stacks.md)

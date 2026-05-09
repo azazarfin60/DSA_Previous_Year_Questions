@@ -1,3 +1,7 @@
+[⬅️ Previous](./10_recursion.md) | [🏠 Home](./README.md) | [Next ➡️](./12_recurrence.md)
+
+---
+
 # Complexity Analysis — Big-O, Time Complexity, Frequency Counts
 
 
@@ -238,3 +242,8 @@ for i = 1 to n:
 **Priority: 1/5** (Must Prepare — appeared EVERY year)
 **Appeared in:** 8/8 years
 **Typical marks:** 03–05 per question
+
+<br>
+
+---
+[⬅️ Previous](./10_recursion.md) | [🏠 Home](./README.md) | [Next ➡️](./12_recurrence.md)

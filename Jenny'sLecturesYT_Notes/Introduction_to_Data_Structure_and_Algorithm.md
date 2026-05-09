@@ -1,3 +1,7 @@
+[⬅️ Previous](./Binary_Search_Introduction_Theory_+_Code_Order_Agnostic_Binary_Search.md) | [🏠 Home](./README.md) | [Next ➡️](./Time_and_Space_Complexity.md)
+
+---
+
 # Introduction to Data Structure and Algorithm
 
 📺 [Watch on YouTube](https://www.youtube.com/watch?v=AZjNs6K5lps)
@@ -74,3 +78,8 @@ This introductory lecture defines what data structures and algorithms are, expla
 ## ⏱️ Complexity Note
 
 This is an introductory lecture — complexity analysis (Big-O notation) will be covered in the next lecture.
+
+<br>
+
+---
+[⬅️ Previous](./Binary_Search_Introduction_Theory_+_Code_Order_Agnostic_Binary_Search.md) | [🏠 Home](./README.md) | [Next ➡️](./Time_and_Space_Complexity.md)

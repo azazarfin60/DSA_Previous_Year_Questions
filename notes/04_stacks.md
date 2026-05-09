@@ -1,3 +1,7 @@
+[⬅️ Previous](./03_linked_lists.md) | [🏠 Home](./README.md) | [Next ➡️](./05_queues.md)
+
+---
+
 # 📘 Chapter 4: Stacks
 
 > **Exam Frequency:** 5/8 years | **Typical Marks:** 04 | **Section:** A
@@ -397,9 +401,52 @@ Step 4: Reverse → "+ A * B C"
 
 > **Prefix: `+ A * B C`** ✅
 
+### Class Example: Convert `A * B + (C - D)` to Prefix
+
+```text
+Step 1: Reverse → ") D - C ( + B * A"
+Step 2: Swap parens → "( D - C ) + B * A"
+Step 3: Apply Infix→Postfix on "( D - C ) + B * A":
+    Postfix result: "D C - B A * +"
+Step 4: Reverse → "+ * A B - C D"
+```
+
+> **Prefix: `+ * A B - C D`** ✅
+
 ---
 
-## 9. Implementing Stack Using Queues
+## 9. Prefix → Postfix Conversion
+
+### Algorithm
+1. Create an empty stack.
+2. **Scan** the Prefix expression from **right to left**.
+3. For each symbol:
+   - **If operand:** Push it into the stack.
+   - **If operator:** 
+     - Pop two operands from the stack (`op1` then `op2`).
+     - Form a new string: `op1 + op2 + operator`.
+     - Push this new string back into the stack.
+4. Final result is the only string remaining in the stack.
+
+### Example Trace: Convert `+ * A B - C D` to Postfix
+
+Scan from **Right to Left**: `D C - B A * +`
+
+| Scan | Symbol | Stack | Action |
+|---|---|---|---|
+| 1 | D | `D` | Push |
+| 2 | C | `D`, `C` | Push |
+| 3 | - | `CD-` | Pop C, D. Form `CD-`. Push. |
+| 4 | B | `CD-`, `B` | Push |
+| 5 | A | `CD-`, `B`, `A` | Push |
+| 6 | * | `CD-`, `AB*` | Pop A, B. Form `AB*`. Push. |
+| 7 | + | `AB*CD-+` | Pop AB*, CD-. Form `AB*CD-+`. Push. |
+
+> **Postfix: `AB*CD-+`** ✅
+
+---
+
+## 10. Implementing Stack Using Queues
 
 This is a **tricky concept** that has appeared in exams (2020, 2022).
 
@@ -439,7 +486,7 @@ POP:
 
 ---
 
-## 10. Exam-Ready Summary
+## 11. Exam-Ready Summary
 
 ### Quick Revision Points
 1. **Stack** = LIFO, TOP pointer, PUSH/POP/PEEK all O(1)
@@ -456,7 +503,7 @@ POP:
 
 ---
 
-## 11. Practice Problems (From Past Exams)
+## 12. Practice Problems (From Past Exams)
 
 ### Problem 1 [2021 & 2024, 04 marks]
 **Q:** Convert `A + (B * C - (D / E ↑ F) * G) * H` to postfix. Show stack at each step.
@@ -487,3 +534,8 @@ POP:
 ---
 
 *← [03 — Linked Lists](03_linked_lists.md) | Next: [05 — Queues →](05_queues.md)*
+
+<br>
+
+---
+[⬅️ Previous](./03_linked_lists.md) | [🏠 Home](./README.md) | [Next ➡️](./05_queues.md)

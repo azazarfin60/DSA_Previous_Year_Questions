@@ -1,3 +1,7 @@
+[⬅️ Previous](./06_heap.md) | [🏠 Home](./README.md) | [Next ➡️](./08_searching.md)
+
+---
+
 # Sorting Algorithms — Quick, Merge, Bubble, Insertion, Radix
 
 
@@ -317,3 +321,8 @@ This can be avoided using **3-way partitioning** (Dutch National Flag), which ha
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 7/8 years (at least one sorting topic)
 **Typical marks:** 03–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./06_heap.md) | [🏠 Home](./README.md) | [Next ➡️](./08_searching.md)

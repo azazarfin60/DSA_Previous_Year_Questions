@@ -1,3 +1,7 @@
+[⬅️ Previous](./15_dijkstra.md) | [🏠 Home](./README.md) | [Next ➡️](./17_mst.md)
+
+---
+
 # Bellman-Ford Algorithm — Negative Edges, Cycle Detection
 
 
@@ -105,3 +109,8 @@ No negative cycle detected. ✓
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 4/8 years
 **Typical marks:** 03–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./15_dijkstra.md) | [🏠 Home](./README.md) | [Next ➡️](./17_mst.md)

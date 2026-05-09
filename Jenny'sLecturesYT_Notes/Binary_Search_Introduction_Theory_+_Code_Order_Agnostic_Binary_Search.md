@@ -1,3 +1,7 @@
+[⬅️ Previous](./9.2_Huffman_Coding_with_Probabilities_UGC_NET_Previous_Year_Question.md) | [🏠 Home](./README.md) | [Next ➡️](./Introduction_to_Data_Structure_and_Algorithm.md)
+
+---
+
 # Binary Search Introduction | Theory + Code | Order Agnostic Binary Search
 
 📺 [Watch on YouTube](https://www.youtube.com/watch?v=WPnN41Er_sU)
@@ -67,3 +71,8 @@ Pass 1: mid=4, arr[4]=23 = 23 → Found at index 4! ✅
 - Reverse the comparison logic for descending arrays
 - Use `low + (high - low) / 2` to avoid integer overflow
 - Same O(log n) complexity
+
+<br>
+
+---
+[⬅️ Previous](./9.2_Huffman_Coding_with_Probabilities_UGC_NET_Previous_Year_Question.md) | [🏠 Home](./README.md) | [Next ➡️](./Introduction_to_Data_Structure_and_Algorithm.md)

@@ -1,3 +1,7 @@
+[⬅️ Previous](./08_recursion.md) | [🏠 Home](./README.md) | [Next ➡️](./10_bst_and_avl.md)
+
+---
+
 # 📘 Chapter 9: Trees — Fundamentals
 
 > **Exam Frequency:** 7–8/8 years (combined tree topics) | **Typical Marks:** 02–06 | **Section:** A/B
@@ -300,3 +304,8 @@ Nodes with 0 children are called **external nodes** (shown as squares).
 ---
 
 *← [08 — Recursion](08_recursion.md) | Next: [10 — BST and AVL →](10_bst_and_avl.md)*
+
+<br>
+
+---
+[⬅️ Previous](./08_recursion.md) | [🏠 Home](./README.md) | [Next ➡️](./10_bst_and_avl.md)

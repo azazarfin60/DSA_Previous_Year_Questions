@@ -1,3 +1,7 @@
+[⬅️ Previous](./18_backtracking.md) | [🏠 Home](./README.md) | [Next ➡️](./20_performance.md)
+
+---
+
 # Tree Concepts — Definitions, Representation, B-tree, Huffman
 
 
@@ -193,3 +197,8 @@ Combine 2+3 = 5 → {4, 5, 8, 15, 25, 40}
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 7/8 years (various tree topics)
 **Typical marks:** 02–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./18_backtracking.md) | [🏠 Home](./README.md) | [Next ➡️](./20_performance.md)

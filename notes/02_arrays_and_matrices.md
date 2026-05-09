@@ -1,3 +1,7 @@
+[⬅️ Previous](./01_data_structures_fundamentals.md) | [🏠 Home](./README.md) | [Next ➡️](./03_linked_lists.md)
+
+---
+
 # 📘 Chapter 2: Arrays and Matrices
 
 > **Exam Frequency:** 2/8 years (Sparse Matrix), address calculation appears indirectly
@@ -323,7 +327,13 @@ Triplet Representation:
 
 **Memory saved:**
 - Regular: 4 × 5 = 20 cells
-- Sparse: 4 × 3 + 1 header = 15 cells (but for a 1000×1000 matrix with 50 non-zeros, savings are massive)
+- Sparse: 4 triplet rows (3 non-zero + 1 header) × 3 columns = 12 cells.
+
+**Class Example Calculation (7×4 Matrix):**
+Consider a 7×4 matrix with only 3 non-zero elements. Assuming each element takes 2 bytes:
+- **Original Array Storage:** $7 \times 4 \times 2 = 56$ Bytes
+- **Triplet Storage:** 4 triplet rows (3 non-zeros + 1 header) $\times$ 3 columns (row, col, val) $\times$ 2 bytes = $4 \times 3 \times 2 = 24$ Bytes
+- **Improvement:** $\frac{56 - 24}{56} \times 100 = \mathbf{57.14\%}$ memory savings.
 
 ### 4.4 Sparse Matrix — Linked List Representation
 
@@ -472,3 +482,8 @@ Savings: 80,000 − 3,600 = 76,400 bytes = 74.6 KB saved (95.5% reduction)
 ---
 
 *← [01 — Data Structures Fundamentals](01_data_structures_fundamentals.md) | Next: [03 — Linked Lists →](03_linked_lists.md)*
+
+<br>
+
+---
+[⬅️ Previous](./01_data_structures_fundamentals.md) | [🏠 Home](./README.md) | [Next ➡️](./03_linked_lists.md)

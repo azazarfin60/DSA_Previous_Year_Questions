@@ -1,3 +1,7 @@
+[⬅️ Previous](./19_tree_concepts.md) | [🏠 Home](./README.md)
+
+---
+
 # Performance Analysis vs Measurement, Garbage Collection
 
 
@@ -75,3 +79,8 @@ Measurement is useful for fine-tuning but cannot replace theoretical analysis fo
 **Priority: 3/5** (Good to Know)
 **Appeared in:** 3/8 years
 **Typical marks:** 01–03 per question
+
+<br>
+
+---
+[⬅️ Previous](./19_tree_concepts.md) | [🏠 Home](./README.md)

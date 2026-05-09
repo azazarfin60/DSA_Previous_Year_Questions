@@ -1,3 +1,7 @@
+[⬅️ Previous](./2021_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2023_answer.md)
+
+---
+
 # 2022 — ECE 2103 Answer Key (OBE)
 
 ---
@@ -611,3 +615,8 @@ End Procedure
 2. **Adding vertices:** Easy in list (add node), expensive in matrix (resize entire 2D array)
 3. **Iterating neighbors:** O(degree) in list vs O(V) in matrix
 4. **Real-world graphs** are usually sparse, making adjacency list the preferred choice
+
+<br>
+
+---
+[⬅️ Previous](./2021_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2023_answer.md)

@@ -1,3 +1,7 @@
+[⬅️ Previous](./04_queue.md) | [🏠 Home](./README.md) | [Next ➡️](./06_heap.md)
+
+---
+
 # Binary Search Tree — Construction, Traversal, Deletion
 
 
@@ -319,3 +323,8 @@ Replace 20 with 30. Delete original 30 (30 has child 35 → 35 takes 30's place)
 **Priority: 1/5** (Must Prepare — appeared EVERY year)
 **Appeared in:** 8/8 years
 **Typical marks:** 04–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./04_queue.md) | [🏠 Home](./README.md) | [Next ➡️](./06_heap.md)

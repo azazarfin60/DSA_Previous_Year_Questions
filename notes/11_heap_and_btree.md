@@ -1,3 +1,7 @@
+[⬅️ Previous](./10_bst_and_avl.md) | [🏠 Home](./README.md) | [Next ➡️](./12_hashing.md)
+
+---
+
 # 📘 Chapter 11: Heap
 
 > **Exam Frequency:** 7/8 years | **Typical Marks:** 03–05 | **Section:** A
@@ -370,3 +374,8 @@ Each node has at most 3 children and 2 keys.
 ---
 
 *← [10 — BST and AVL](10_bst_and_avl.md) | Next: [12 — Hashing →](12_hashing.md)*
+
+<br>
+
+---
+[⬅️ Previous](./10_bst_and_avl.md) | [🏠 Home](./README.md) | [Next ➡️](./12_hashing.md)

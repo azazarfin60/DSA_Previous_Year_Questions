@@ -1,3 +1,7 @@
+[⬅️ Previous](./14_bfs_dfs.md) | [🏠 Home](./README.md) | [Next ➡️](./16_bellman_ford.md)
+
+---
+
 # Dijkstra's Algorithm — Shortest Path
 
 
@@ -219,3 +223,8 @@
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 04–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./14_bfs_dfs.md) | [🏠 Home](./README.md) | [Next ➡️](./16_bellman_ford.md)

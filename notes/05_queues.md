@@ -1,3 +1,7 @@
+[⬅️ Previous](./04_stacks.md) | [🏠 Home](./README.md) | [Next ➡️](./06_searching_algorithms.md)
+
+---
+
 # 📘 Chapter 5: Queues
 
 > **Exam Frequency:** 7/8 years | **Typical Marks:** 02–07 | **Section:** A
@@ -424,3 +428,8 @@ int dequeue() {
 ---
 
 *← [04 — Stacks](04_stacks.md) | Next: [06 — Searching Algorithms →](06_searching_algorithms.md)*
+
+<br>
+
+---
+[⬅️ Previous](./04_stacks.md) | [🏠 Home](./README.md) | [Next ➡️](./06_searching_algorithms.md)

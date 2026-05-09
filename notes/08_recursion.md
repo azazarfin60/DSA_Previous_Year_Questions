@@ -1,3 +1,7 @@
+[⬅️ Previous](./07_sorting_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./09_trees_fundamentals.md)
+
+---
+
 # 📘 Chapter 8: Recursion & Recurrence Relations
 
 > **Exam Frequency:** 5/8 years (Recursion), 4/8 (Recurrence) | **Typical Marks:** 02–04 | **Section:** A/B
@@ -277,3 +281,8 @@ Notice: fib(3) is computed **twice**, fib(2) is computed **three times**! This i
 ---
 
 *← [07 — Sorting Algorithms](07_sorting_algorithms.md) | Next: [09 — Trees Fundamentals →](09_trees_fundamentals.md)*
+
+<br>
+
+---
+[⬅️ Previous](./07_sorting_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./09_trees_fundamentals.md)

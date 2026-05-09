@@ -1,3 +1,7 @@
+[⬅️ Previous](./2019_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2021_answer.md)
+
+---
+
 # 2020 — ECE 2103 Answer Key
 
 ---
@@ -545,3 +549,8 @@ End Procedure
 ```
 
 > **Answer: Use Bellman-Ford to detect the negative cycle. If detected, no finite shortest path exists.**
+
+<br>
+
+---
+[⬅️ Previous](./2019_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2021_answer.md)

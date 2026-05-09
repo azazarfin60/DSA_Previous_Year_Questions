@@ -1,3 +1,7 @@
+[⬅️ Previous](./15_advanced_topics.md) | [🏠 Home](./README.md)
+
+---
+
 # 📋 DSA Cheatsheet — Quick Reference
 
 ---
@@ -115,3 +119,8 @@
 | Edge check | O(1) | O(degree) |
 | Dense graphs | ✅ | ❌ |
 | Sparse graphs | ❌ | ✅ |
+
+<br>
+
+---
+[⬅️ Previous](./15_advanced_topics.md) | [🏠 Home](./README.md)

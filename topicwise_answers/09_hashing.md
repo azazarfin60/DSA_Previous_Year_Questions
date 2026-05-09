@@ -1,3 +1,7 @@
+[⬅️ Previous](./08_searching.md) | [🏠 Home](./README.md) | [Next ➡️](./10_recursion.md)
+
+---
+
 # Hashing — Hash Functions, Collision Resolution, Chaining, Probing
 
 
@@ -125,3 +129,8 @@ Let me compute: h(19)=19%7=5, h(26)=26%7=5, h(13)=13%7=6, h(48)=48%7=6, h(17)=17
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 5/8 years
 **Typical marks:** 02–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./08_searching.md) | [🏠 Home](./README.md) | [Next ➡️](./10_recursion.md)

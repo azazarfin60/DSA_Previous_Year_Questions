@@ -1,3 +1,7 @@
+[⬅️ Previous](./09_hashing.md) | [🏠 Home](./README.md) | [Next ➡️](./11_complexity_analysis.md)
+
+---
+
 # Recursion — Properties, Tower of Hanoi, Head/Tail Recursion
 
 
@@ -117,3 +121,8 @@ For N=3, SOURCE=A, DEST=C, AUX=B:
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 5/8 years
 **Typical marks:** 02–03 per question
+
+<br>
+
+---
+[⬅️ Previous](./09_hashing.md) | [🏠 Home](./README.md) | [Next ➡️](./11_complexity_analysis.md)

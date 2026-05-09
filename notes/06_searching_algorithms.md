@@ -1,3 +1,7 @@
+[⬅️ Previous](./05_queues.md) | [🏠 Home](./README.md) | [Next ➡️](./07_sorting_algorithms.md)
+
+---
+
 # 📘 Chapter 6: Searching Algorithms
 
 > **Exam Frequency:** 6/8 years (Binary Search) | **Typical Marks:** 03–06 | **Section:** A
@@ -362,3 +366,8 @@ Found in **1 comparison** (best case!).
 ---
 
 *← [05 — Queues](05_queues.md) | Next: [07 — Sorting Algorithms →](07_sorting_algorithms.md)*
+
+<br>
+
+---
+[⬅️ Previous](./05_queues.md) | [🏠 Home](./README.md) | [Next ➡️](./07_sorting_algorithms.md)

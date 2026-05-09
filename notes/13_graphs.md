@@ -1,3 +1,7 @@
+[⬅️ Previous](./12_hashing.md) | [🏠 Home](./README.md) | [Next ➡️](./14_graph_algorithms.md)
+
+---
+
 # 📘 Chapter 13: Graphs — Representation, BFS, DFS
 
 > **Exam Frequency:** 7/8 (representation), 6/8 (BFS/DFS) | **Typical Marks:** 02–06 | **Section:** B
@@ -344,3 +348,8 @@ DFS(A): Visit A → neighbors B, C
 ---
 
 *← [12 — Hashing](12_hashing.md) | Next: [14 — Graph Algorithms →](14_graph_algorithms.md)*
+
+<br>
+
+---
+[⬅️ Previous](./12_hashing.md) | [🏠 Home](./README.md) | [Next ➡️](./14_graph_algorithms.md)

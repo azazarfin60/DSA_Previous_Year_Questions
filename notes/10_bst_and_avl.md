@@ -1,3 +1,7 @@
+[⬅️ Previous](./09_trees_fundamentals.md) | [🏠 Home](./README.md) | [Next ➡️](./11_heap_and_btree.md)
+
+---
+
 # 📘 Chapter 10: Binary Search Tree (BST) & Tree Traversals
 
 > **Exam Frequency:** 8/8 years | **Typical Marks:** 04–06 | **Section:** A
@@ -702,3 +706,8 @@ This is asked in **2017, 2021, 2024**.
 ---
 
 *← [09 — Trees Fundamentals](09_trees_fundamentals.md) | Next: [11 — Heap and B-Tree →](11_heap_and_btree.md)*
+
+<br>
+
+---
+[⬅️ Previous](./09_trees_fundamentals.md) | [🏠 Home](./README.md) | [Next ➡️](./11_heap_and_btree.md)

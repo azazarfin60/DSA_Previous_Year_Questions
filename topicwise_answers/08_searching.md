@@ -1,3 +1,7 @@
+[⬅️ Previous](./07_sorting.md) | [🏠 Home](./README.md) | [Next ➡️](./09_hashing.md)
+
+---
+
 # Searching — Linear Search, Binary Search
 
 
@@ -297,3 +301,8 @@ End Procedure
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 6/8 years
 **Typical marks:** 03–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./07_sorting.md) | [🏠 Home](./README.md) | [Next ➡️](./09_hashing.md)

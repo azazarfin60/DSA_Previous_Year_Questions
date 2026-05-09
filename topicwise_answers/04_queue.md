@@ -1,3 +1,7 @@
+[⬅️ Previous](./03_stack_applications.md) | [🏠 Home](./README.md) | [Next ➡️](./05_bst.md)
+
+---
+
 # Queue — Queue, Priority Queue, Dequeue, Circular Queue
 
 
@@ -312,3 +316,8 @@ Remove index 5 (LL), LEFT = (5+1) mod 8 = 6
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 02–07 per question
+
+<br>
+
+---
+[⬅️ Previous](./03_stack_applications.md) | [🏠 Home](./README.md) | [Next ➡️](./05_bst.md)

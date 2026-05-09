@@ -1,38 +1,119 @@
-# 🎬 Jenny's Lectures — Video-Wise DSA Notes
+# Index for Jenny'sLecturesYT_Notes
 
-**115 structured study notes**, one per video, from the [Data Structures & Algorithms playlist](https://www.youtube.com/playlist?list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU) by Jenny's Lectures.
+---
 
-## How These Were Made
-
-1. **67 videos** had YouTube captions → fetched via `youtube-transcript` (Node.js)
-2. **48 videos** had captions disabled → audio downloaded via `yt-dlp`, transcribed locally using `faster-whisper` (Whisper large-v3-turbo) on GPU
-3. All 115 transcripts were synthesized into exam-focused Markdown notes
-
-## Structure
-
-See [`00_index.md`](00_index.md) for the full hierarchical index.
-
-### Sections
-| Section | Topic | Notes |
-|---------|-------|-------|
-| 0 | Foundations | 2 |
-| 1 | Arrays | 6 |
-| 2 | Linked Lists | 19 |
-| 3 | Stack & Expressions | 13 |
-| 4 | Queue & Deque | 8 |
-| 5 | Trees (BT, BST, AVL, RBT, Splay, B-Tree, B+) | 31 |
-| 6 | Graphs | 15 |
-| 7 | Searching & Sorting | 14 |
-| 8 | Hashing | 3 |
-| 9 | Greedy (Huffman) | 2 |
-| **Total** | | **115** |
-
-## Format
-
-Every note includes:
-- 📺 YouTube link to the original video
-- 📌 Executive summary
-- 💻 C code with inline comments
-- 📐 Step-by-step traces with tables/diagrams
-- ⏱️ Time & Space complexity
-- 💡 Exam-ready takeaways
+- [1.1 Arrays in Data Structure Declaration, Initialization, Memory representation](./1.1_Arrays_in_Data_Structure_Declaration,_Initialization,_Memory_representation.md)
+- [1.2 Array Operations - Traversal, Insertion Explanation with C Program DSA Course](./1.2_Array_Operations_-_Traversal,_Insertion_Explanation_with_C_Program_DSA_Course.md)
+- [1.3 Array Operations Deletion from Array Explanation with Code Data Structure](./1.3_Array_Operations_Deletion_from_Array_Explanation_with_Code_Data_Structure.md)
+- [1.4 Pointers and Arrays Data structure Tutorials](./1.4_Pointers_and_Arrays_Data_structure_Tutorials.md)
+- [1.5 Introduction to Two Dimensional 2D Arrays Implementation Memory representation](./1.5_Introduction_to_Two_Dimensional_2D_Arrays_Implementation_Memory_representation.md)
+- [1.6 Pointers and 2-D Arrays Two dimensional Array Data Structures & Algorithm Tutorials](./1.6_Pointers_and_2-D_Arrays_Two_dimensional_Array_Data_Structures_&_Algorithm_Tutorials.md)
+- [2.1 Introduction to Linked List Need of Linked List DSA Tutorials](./2.1_Introduction_to_Linked_List_Need_of_Linked_List_DSA_Tutorials.md)
+- [2.2 Types of Linked List in Data Structures DSA Full Course](./2.2_Types_of_Linked_List_in_Data_Structures_DSA_Full_Course.md)
+- [2.3 Arrays vs Linked List Data structures](./2.3_Arrays_vs_Linked_List_Data_structures.md)
+- [2.4 Linked List Implementation in CC++ Creation and Display DSA Tutorials](./2.4_Linked_List_Implementation_in_CC++_Creation_and_Display_DSA_Tutorials.md)
+- [2.5 Insertion of a Node in Linked List(at Beginning,End,Specified Position)with Code DSA Tutorials](./2.5_Insertion_of_a_Node_in_Linked_List(at_Beginning,End,Specified_Position)with_Code_DSA_Tutorials.md)
+- [2.6 Deletion of a node from Linked List (from beginning, end, specified position) DSA Tutorials](./2.6_Deletion_of_a_node_from_Linked_List_(from_beginning,_end,_specified_position)_DSA_Tutorials.md)
+- [2.7 Find length of Linked List Iterative approach DSA Tutorials](./2.7_Find_length_of_Linked_List_Iterative_approach_DSA_Tutorials.md)
+- [2.8 Reverse a Linked List - Iterative Method Data Structure Tutorials](./2.8_Reverse_a_Linked_List_-_Iterative_Method_Data_Structure_Tutorials.md)
+- [2.9 Introduction to Doubly Linked List in Data structures DSA Tutorials](./2.9_Introduction_to_Doubly_Linked_List_in_Data_structures_DSA_Tutorials.md)
+- [2.10 Implementation of Doubly Linked List - Data Structures](./2.10_Implementation_of_Doubly_Linked_List_-_Data_Structures.md)
+- [2.11 Insertion in Doubly Linked List(beginning, end, specific position) Data Structures](./2.11_Insertion_in_Doubly_Linked_List(beginning,_end,_specific_position)_Data_Structures.md)
+- [2.12 Deletion from Doubly Linked List (beginning,end,specific position) Data Structures Tutorials](./2.12_Deletion_from_Doubly_Linked_List_(beginning,end,specific_position)_Data_Structures_Tutorials.md)
+- [2.13 Reverse a Doubly Linked List Data Structures & Algorithm Tutorials](./2.13_Reverse_a_Doubly_Linked_List_Data_Structures_&_Algorithm_Tutorials.md)
+- [2.14 Circular Linked List in Data Structure Creation and Display DSA Course](./2.14_Circular_Linked_List_in_Data_Structure_Creation_and_Display_DSA_Course.md)
+- [2.15 Implementation of Circular linked list in C Data Structure Tutorials](./2.15_Implementation_of_Circular_linked_list_in_C_Data_Structure_Tutorials.md)
+- [2.16 Insertion in Circular Linked List Data Structure Tutorials](./2.16_Insertion_in_Circular_Linked_List_Data_Structure_Tutorials.md)
+- [2.17 Deletion from Circular Linked List beginning end given position DSA Tutorials](./2.17_Deletion_from_Circular_Linked_List_beginning_end_given_position_DSA_Tutorials.md)
+- [2.18 Reverse a Circular Linked List Data Structure Tutorials](./2.18_Reverse_a_Circular_Linked_List_Data_Structure_Tutorials.md)
+- [2.19 Implementation of Doubly Circular Linked List Creation and Display Data Structures](./2.19_Implementation_of_Doubly_Circular_Linked_List_Creation_and_Display_Data_Structures.md)
+- [2.20 Insertion in Doubly Circular Linked List Data Structure & Algorithm Tutorials](./2.20_Insertion_in_Doubly_Circular_Linked_List_Data_Structure_&_Algorithm_Tutorials.md)
+- [2.21 Deletion from Doubly Circular Linked List Data Structure Algorithm Course](./2.21_Deletion_from_Doubly_Circular_Linked_List_Data_Structure_Algorithm_Course.md)
+- [3.1 Stack in Data Structure Introduction to Stack Data Structures Tutorials](./3.1_Stack_in_Data_Structure_Introduction_to_Stack_Data_Structures_Tutorials.md)
+- [3.2 Implementation of Stack using Array Data Structure and Algorithm Tutorials](./3.2_Implementation_of_Stack_using_Array_Data_Structure_and_Algorithm_Tutorials.md)
+- [3.3 Stack implementation using Linked List Data Structures and Algorithm Tutorials](./3.3_Stack_implementation_using_Linked_List_Data_Structures_and_Algorithm_Tutorials.md)
+- [3.4 Infix Prefix and Postfix expressions Data Structures Tutorials](./3.4_Infix_Prefix_and_Postfix_expressions_Data_Structures_Tutorials.md)
+- [3.5 Infix to Postfix Conversion Rules using Stack Data structures Tutorials](./3.5_Infix_to_Postfix_Conversion_Rules_using_Stack_Data_structures_Tutorials.md)
+- [3.6 Infix to Postfix using Stack Data Structure and Algorithm](./3.6_Infix_to_Postfix_using_Stack_Data_Structure_and_Algorithm.md)
+- [3.7 Infix to Postfix conversion using Stack Data structures and algorithms](./3.7_Infix_to_Postfix_conversion_using_Stack_Data_structures_and_algorithms.md)
+- [3.8 Infix to Prefix using Stack Data Structures Tutorials](./3.8_Infix_to_Prefix_using_Stack_Data_Structures_Tutorials.md)
+- [3.9 Evaluation of Prefix and Postfix expressions using Stack Data Structures](./3.9_Evaluation_of_Prefix_and_Postfix_expressions_using_Stack_Data_Structures.md)
+- [3.10 Postfix Expression Evaluation using Stack Data Structures and Algorithms](./3.10_Postfix_Expression_Evaluation_using_Stack_Data_Structures_and_Algorithms.md)
+- [3.11 Prefix to Infix Postfix to Infix Conversion Data structure Tutorials](./3.11_Prefix_to_Infix_Postfix_to_Infix_Conversion_Data_structure_Tutorials.md)
+- [3.12 Expression Trees Binary Expression Tree Data Structures Tutorials](./3.12_Expression_Trees_Binary_Expression_Tree_Data_Structures_Tutorials.md)
+- [3.13 Expression Tree from Postfix Data Structures Tutorials](./3.13_Expression_Tree_from_Postfix_Data_Structures_Tutorials.md)
+- [4.1 Queue in Data Structure Introduction to Queue Data Structures Tutorials](./4.1_Queue_in_Data_Structure_Introduction_to_Queue_Data_Structures_Tutorials.md)
+- [4.2 Implementation of Queue using Arrays Data Structures Algorithm Tutorials](./4.2_Implementation_of_Queue_using_Arrays_Data_Structures_Algorithm_Tutorials.md)
+- [4.3 Queue Implementation using Linked List in C Data Structure Tutorials](./4.3_Queue_Implementation_using_Linked_List_in_C_Data_Structure_Tutorials.md)
+- [4.4 Circular Queue using Arrays in C DSA Tutorials](./4.4_Circular_Queue_using_Arrays_in_C_DSA_Tutorials.md)
+- [4.5 Circular Queue using Linked List DSA Tutorials](./4.5_Circular_Queue_using_Linked_List_DSA_Tutorials.md)
+- [4.6 Implement Queue using Stack in C Data Structures Tutorials](./4.6_Implement_Queue_using_Stack_in_C_Data_Structures_Tutorials.md)
+- [4.7 DEQUE in Data Structure Introduction to DEQue - Double Ended Queue](./4.7_DEQUE_in_Data_Structure_Introduction_to_DEQue_-_Double_Ended_Queue.md)
+- [4.8 Implementation of DEQUE using Circular Array Data Structures Tutorials](./4.8_Implementation_of_DEQUE_using_Circular_Array_Data_Structures_Tutorials.md)
+- [5.1 Tree in Data Structure Introduction to Trees Data Structures Tutorials](./5.1_Tree_in_Data_Structure_Introduction_to_Trees_Data_Structures_Tutorials.md)
+- [5.2 Binary Tree in Data Structure Types of Binary Tree Data Structures Tutorials](./5.2_Binary_Tree_in_Data_Structure_Types_of_Binary_Tree_Data_Structures_Tutorials.md)
+- [5.3 Binary Tree Implementation in C Program Data Structures Tutorials](./5.3_Binary_Tree_Implementation_in_C_Program_Data_Structures_Tutorials.md)
+- [5.4 Binary Tree Representation Array representation of Binary Tree Data Structure](./5.4_Binary_Tree_Representation_Array_representation_of_Binary_Tree_Data_Structure.md)
+- [5.5 Binary Tree Traversals Inorder Preorder Postorder Data structures and algorithms](./5.5_Binary_Tree_Traversals_Inorder_Preorder_Postorder_Data_structures_and_algorithms.md)
+- [5.6 Binary Tree traversal Preorder Inorder Postorder Data Structures Tutorials](./5.6_Binary_Tree_traversal_Preorder_Inorder_Postorder_Data_Structures_Tutorials.md)
+- [5.7 Construct Binary Tree from Preorder and Inorder Traversal Example Data Structures Tutorials](./5.7_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Example_Data_Structures_Tutorials.md)
+- [5.8 Construct Binary Tree from Postorder and Inorder with example Data structures Course](./5.8_Construct_Binary_Tree_from_Postorder_and_Inorder_with_example_Data_structures_Course.md)
+- [5.9 Construct Binary Tree from Preorder and Postorder traversal Data Structure Tutorials](./5.9_Construct_Binary_Tree_from_Preorder_and_Postorder_traversal_Data_Structure_Tutorials.md)
+- [5.10 Binary Search Trees BST Insertion and Deletion DSA Full Course](./5.10_Binary_Search_Trees_BST_Insertion_and_Deletion_DSA_Full_Course.md)
+- [5.11 Construct Binary Search Tree(BST) from Preorder example Data Structures & Algorithm](./5.11_Construct_Binary_Search_Tree(BST)_from_Preorder_example_Data_Structures_&_Algorithm.md)
+- [5.12 Construct Binary Search Tree(BST) from Postorder Traversal Data structures](./5.12_Construct_Binary_Search_Tree(BST)_from_Postorder_Traversal_Data_structures.md)
+- [5.13 AVL Tree Insertion Rotations LL RR LR RL with Example Data Structure Tutorials](./5.13_AVL_Tree_Insertion_Rotations_LL_RR_LR_RL_with_Example_Data_Structure_Tutorials.md)
+- [5.14 AVL Tree Insertion with Solved Example Data Structures & Algorithm Tutorials](./5.14_AVL_Tree_Insertion_with_Solved_Example_Data_Structures_&_Algorithm_Tutorials.md)
+- [5.15 AVL Tree Deletion in Data structures with Example DSA Tutorials](./5.15_AVL_Tree_Deletion_in_Data_structures_with_Example_DSA_Tutorials.md)
+- [5.16 Red Black tree Introduction to Red Black trees DSA Tutorials](./5.16_Red_Black_tree_Introduction_to_Red_Black_trees_DSA_Tutorials.md)
+- [5.17 Red Black Tree Insertion Algorithm Data Structure Tutorials](./5.17_Red_Black_Tree_Insertion_Algorithm_Data_Structure_Tutorials.md)
+- [5.18 Red Black Tree Deletion DSA Tutorials for Beginners](./5.18_Red_Black_Tree_Deletion_DSA_Tutorials_for_Beginners.md)
+- [5.19 Splay Tree Introduction Data structure Algorithm](./5.19_Splay_Tree_Introduction_Data_structure_Algorithm.md)
+- [5.20 Splay Tree Insertion Data structure](./5.20_Splay_Tree_Insertion_Data_structure.md)
+- [5.21 Splay Trees Deletion Bottom-up Splaying Data Structure & Algorithm](./5.21_Splay_Trees_Deletion_Bottom-up_Splaying_Data_Structure_&_Algorithm.md)
+- [5.22 Splay Tree Deletion Top Down Splaying Data Structure Algorithm](./5.22_Splay_Tree_Deletion_Top_Down_Splaying_Data_Structure_Algorithm.md)
+- [5.23 Introduction to B-Trees Data Structures Algorithm Tutorials](./5.23_Introduction_to_B-Trees_Data_Structures_Algorithm_Tutorials.md)
+- [5.24 Insertion in B-tree of Order 3 B-Tree Example Data structures](./5.24_Insertion_in_B-tree_of_Order_3_B-Tree_Example_Data_structures.md)
+- [5.25 Insertion in B-Tree of Order 5 Data structures algorithms Tutorials](./5.25_Insertion_in_B-Tree_of_Order_5_Data_structures_algorithms_Tutorials.md)
+- [5.26 Insertion in B-Tree of Order 5 with Alphabets Data structures](./5.26_Insertion_in_B-Tree_of_Order_5_with_Alphabets_Data_structures.md)
+- [5.27 Insertion in B-Tree of Order 4 (Data Structure)](./5.27_Insertion_in_B-Tree_of_Order_4_(Data_Structure).md)
+- [5.28 B-Tree Deletion in Data Structures DSA Tutorials](./5.28_B-Tree_Deletion_in_Data_Structures_DSA_Tutorials.md)
+- [5.29 B+ Tree Insertion B+ Tree Creation example Data Structure Tutorials](./5.29_B+_Tree_Insertion_B+_Tree_Creation_example_Data_Structure_Tutorials.md)
+- [5.30 B+ Tree Deletion with example Data structure Algorithm Tutorials](./5.30_B+_Tree_Deletion_with_example_Data_structure_Algorithm_Tutorials.md)
+- [5.31 B+ Tree Insertion Create B+ Tree of Order 5 Data Structures Tutorials](./5.31_B+_Tree_Insertion_Create_B+_Tree_of_Order_5_Data_Structures_Tutorials.md)
+- [6.1 Graph Representation in Data Structure(Graph Theory)Adjacency Matrix and Adjacency List](./6.1_Graph_Representation_in_Data_Structure(Graph_Theory)Adjacency_Matrix_and_Adjacency_List.md)
+- [6.2 BFS and DFS Graph Traversals Breadth First Search and Depth First Search Data structures](./6.2_BFS_and_DFS_Graph_Traversals_Breadth_First_Search_and_Depth_First_Search_Data_structures.md)
+- [6.3 Types of Edges in DFS Edge Classification Data Structures and Algorithms](./6.3_Types_of_Edges_in_DFS_Edge_Classification_Data_Structures_and_Algorithms.md)
+- [6.4 Minimum Spanning Tree Properties of MST Data Structures Tutorials](./6.4_Minimum_Spanning_Tree_Properties_of_MST_Data_Structures_Tutorials.md)
+- [6.5 Prim's Algorithm for Minimum Spanning Tree Data Structures Tutorials](./6.5_Prim's_Algorithm_for_Minimum_Spanning_Tree_Data_Structures_Tutorials.md)
+- [6.6 Kruskals Algorithm Minimum Spanning Tree Greedy method Data structures](./6.6_Kruskals_Algorithm_Minimum_Spanning_Tree_Greedy_method_Data_structures.md)
+- [6.7 Minimum spanning Tree(MST) UGC NET(Computer Science) Practice Question with Solution](./6.7_Minimum_spanning_Tree(MST)_UGC_NET(Computer_Science)_Practice_Question_with_Solution.md)
+- [6.8 Cycle detection in Directed Graph Data Structures and Algorithms Tutorials](./6.8_Cycle_detection_in_Directed_Graph_Data_Structures_and_Algorithms_Tutorials.md)
+- [6.9 Detect Cycle in Undirected Graph Data Structures and Algorithms](./6.9_Detect_Cycle_in_Undirected_Graph_Data_Structures_and_Algorithms.md)
+- [6.10 Topological Sorting (with Examples) How to find all Topological Orderings of a Graph](./6.10_Topological_Sorting_(with_Examples)_How_to_find_all_Topological_Orderings_of_a_Graph.md)
+- [6.11 Connected Components How to find Connected Components in Graph Graph Theory](./6.11_Connected_Components_How_to_find_Connected_Components_in_Graph_Graph_Theory.md)
+- [6.12 Bridges Cut Edge in a Graph Find All Bridges Graph Theory](./6.12_Bridges_Cut_Edge_in_a_Graph_Find_All_Bridges_Graph_Theory.md)
+- [6.13 Dijkstra Algorithm Single Source Shortest Path Greedy Method](./6.13_Dijkstra_Algorithm_Single_Source_Shortest_Path_Greedy_Method.md)
+- [6.14 Bellman Ford Algorithm Single Source Shortest Path Dynamic Programming](./6.14_Bellman_Ford_Algorithm_Single_Source_Shortest_Path_Dynamic_Programming.md)
+- [6.15 Floyd Warshall Algorithm All Pair Shortest Path algorithm Data Structures and Algorithms](./6.15_Floyd_Warshall_Algorithm_All_Pair_Shortest_Path_algorithm_Data_Structures_and_Algorithms.md)
+- [7.1 Linear Search Algorithm Linear Search in C Data Structures Tutorials](./7.1_Linear_Search_Algorithm_Linear_Search_in_C_Data_Structures_Tutorials.md)
+- [7.2 What is Binary Search Binary Search Algorithm with example Data Structures Tutorials](./7.2_What_is_Binary_Search_Binary_Search_Algorithm_with_example_Data_Structures_Tutorials.md)
+- [7.3 Bubble Sort Algorithm Data Structures Tutorials](./7.3_Bubble_Sort_Algorithm_Data_Structures_Tutorials.md)
+- [7.4 Insertion Sort Algorithm with C Program Data Structure Tutorials](./7.4_Insertion_Sort_Algorithm_with_C_Program_Data_Structure_Tutorials.md)
+- [7.5 Selection Sort Algorithm with C Program Data Structure](./7.5_Selection_Sort_Algorithm_with_C_Program_Data_Structure.md)
+- [7.6 Quick Sort in Data Structure Sorting Algorithm DSA Full Course](./7.6_Quick_Sort_in_Data_Structure_Sorting_Algorithm_DSA_Full_Course.md)
+- [7.7 Merge Sort in Data Structure Sorting Algorithms DSA Full Course](./7.7_Merge_Sort_in_Data_Structure_Sorting_Algorithms_DSA_Full_Course.md)
+- [7.8 Max Heap Insertion and Deletion Data Structure](./7.8_Max_Heap_Insertion_and_Deletion_Data_Structure.md)
+- [7.9 Heap Sort Heapify Method Build Max Heap Algorithm Sorting Algorithms](./7.9_Heap_Sort_Heapify_Method_Build_Max_Heap_Algorithm_Sorting_Algorithms.md)
+- [7.10 Radix SortBucket Sort in Data Structure Sorting Algorithm](./7.10_Radix_SortBucket_Sort_in_Data_Structure_Sorting_Algorithm.md)
+- [7.11 Shell Sort Sorting Algorithms Full explanation Code DSA Course](./7.11_Shell_Sort_Sorting_Algorithms_Full_explanation_Code_DSA_Course.md)
+- [7.12 Counting Sort (Analysis and Code) Easiest Explanation Data Structure Tutorials](./7.12_Counting_Sort_(Analysis_and_Code)_Easiest_Explanation_Data_Structure_Tutorials.md)
+- [7.13 Radix Sort Easiest explanation with Code Sorting Algorithms Data Structures](./7.13_Radix_Sort_Easiest_explanation_with_Code_Sorting_Algorithms_Data_Structures.md)
+- [8.1 Hashing Techniques to Resolve Collision Separate Chaining and Linear Probing Data structure](./8.1_Hashing_Techniques_to_Resolve_Collision_Separate_Chaining_and_Linear_Probing_Data_structure.md)
+- [8.2 Hashing Quadratic Probing Collision Resolution Data structures algorithms](./8.2_Hashing_Quadratic_Probing_Collision_Resolution_Data_structures_algorithms.md)
+- [8.3 Double Hashing Collision Resolution Technique Data Structures and algorithms](./8.3_Double_Hashing_Collision_Resolution_Technique_Data_Structures_and_algorithms.md)
+- [9.1 Huffman Coding -Greedy Method Data Structures Tutorials](./9.1_Huffman_Coding_-Greedy_Method_Data_Structures_Tutorials.md)
+- [9.2 Huffman Coding with Probabilities UGC NET Previous Year Question](./9.2_Huffman_Coding_with_Probabilities_UGC_NET_Previous_Year_Question.md)
+- [Binary Search Introduction Theory + Code Order Agnostic Binary Search](./Binary_Search_Introduction_Theory_+_Code_Order_Agnostic_Binary_Search.md)
+- [Introduction to Data Structure and Algorithm](./Introduction_to_Data_Structure_and_Algorithm.md)
+- [Time and Space Complexity](./Time_and_Space_Complexity.md)

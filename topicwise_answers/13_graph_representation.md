@@ -1,3 +1,7 @@
+[⬅️ Previous](./12_recurrence.md) | [🏠 Home](./README.md) | [Next ➡️](./14_bfs_dfs.md)
+
+---
+
 # Graph Representation — Adjacency Matrix, Adjacency List
 
 
@@ -204,3 +208,8 @@ Stack: [B] → visit B (no new)
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 02–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./12_recurrence.md) | [🏠 Home](./README.md) | [Next ➡️](./14_bfs_dfs.md)

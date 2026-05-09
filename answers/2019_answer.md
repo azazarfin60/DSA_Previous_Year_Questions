@@ -1,3 +1,7 @@
+[⬅️ Previous](./2018_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2020_answer.md)
+
+---
+
 # 2019 — ECE 2103 Answer Key
 
 ---
@@ -664,3 +668,8 @@ Take c = 6, n₀ = 2: For all n ≥ 2, 6n³/(log n + 1) ≤ 6·n³ ✓
 
 > **Minimum Path: A → F → D → J**
 > **Path Length: 3 edges**
+
+<br>
+
+---
+[⬅️ Previous](./2018_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2020_answer.md)

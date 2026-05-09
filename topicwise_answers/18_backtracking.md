@@ -1,3 +1,7 @@
+[⬅️ Previous](./17_mst.md) | [🏠 Home](./README.md) | [Next ➡️](./19_tree_concepts.md)
+
+---
+
 # Backtracking — N-Queens, NP-Hard, NP-Complete
 
 
@@ -84,3 +88,8 @@ Since NP-Hard/NP-Complete problems have no known efficient solution, **backtrack
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 4/8 years (N-Queens), 3/8 (NP)
 **Typical marks:** 03–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./17_mst.md) | [🏠 Home](./README.md) | [Next ➡️](./19_tree_concepts.md)

@@ -1,3 +1,7 @@
+[⬅️ Previous](./2023_answer.md) | [🏠 Home](./README.md)
+
+---
+
 # 2024 — ECE 2103 Answer Key (OBE)
 
 ---
@@ -626,3 +630,8 @@ In doubly linked list, deleting node 20 requires only updating 10's NEXT and 30'
 ```
 
 > **Two solutions exist for the 4-Queens problem.**
+
+<br>
+
+---
+[⬅️ Previous](./2023_answer.md) | [🏠 Home](./README.md)

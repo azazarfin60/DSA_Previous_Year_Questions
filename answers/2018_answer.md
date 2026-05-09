@@ -1,3 +1,7 @@
+[⬅️ Previous](./2017_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2019_answer.md)
+
+---
+
 # 2018 — ECE 2103 Answer Key
 # Section A
 
@@ -660,3 +664,8 @@ End Procedure
 ```
 
 **Time Complexity:** O(N!) in worst case.
+
+<br>
+
+---
+[⬅️ Previous](./2017_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2019_answer.md)

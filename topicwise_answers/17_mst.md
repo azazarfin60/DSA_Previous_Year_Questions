@@ -1,3 +1,7 @@
+[⬅️ Previous](./16_bellman_ford.md) | [🏠 Home](./README.md) | [Next ➡️](./18_backtracking.md)
+
+---
+
 # Minimum Spanning Tree — Prim's & Kruskal's Algorithm
 
 
@@ -266,3 +270,8 @@ Let me recheck: After step 5, connected = {H1,H2,H3,H7}, {H4,H5,H6}. Need 1 more
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 03–06 per question
+
+<br>
+
+---
+[⬅️ Previous](./16_bellman_ford.md) | [🏠 Home](./README.md) | [Next ➡️](./18_backtracking.md)

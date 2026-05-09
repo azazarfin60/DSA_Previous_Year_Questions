@@ -1,3 +1,7 @@
+[⬅️ Previous](./13_graphs.md) | [🏠 Home](./README.md) | [Next ➡️](./15_advanced_topics.md)
+
+---
+
 # 📘 Chapter 14: Graph Algorithms — Dijkstra, Bellman-Ford, Prim's, Kruskal's
 
 > **Exam Frequency:** 7/8 years (Dijkstra, MST) | **Typical Marks:** 04–06 | **Section:** B
@@ -191,6 +195,10 @@ Edges: A→B:6, A→D:7, B→C:-2, C→F:-3, D→E:-4, E→B:5, F→E:9
 - F→E: dist[E] = min(3, 1+9=10) = 3 (no change)
 
 No changes in iteration 2 → converged.
+
+### Negative Weight Cycles (Instructor's Note)
+If the graph contains a **Negative Weight Cycle**, the path cost can be reduced infinitely by repeatedly traversing the cycle. In this case, the Bellman-Ford algorithm will **fail to converge**. 
+- **Bengali Note:** "কখনোই Converge করবে না" (Will never converge) if such a loop exists.
 
 ### Dijkstra vs Bellman-Ford
 
@@ -400,3 +408,8 @@ Total: O(E log E) = O(E log V)    (since E ≤ V²)
 ---
 
 *← [13 — Graphs](13_graphs.md) | Next: [15 — Advanced Topics →](15_advanced_topics.md)*
+
+<br>
+
+---
+[⬅️ Previous](./13_graphs.md) | [🏠 Home](./README.md) | [Next ➡️](./15_advanced_topics.md)

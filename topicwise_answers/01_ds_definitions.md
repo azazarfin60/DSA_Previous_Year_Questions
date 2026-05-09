@@ -1,3 +1,7 @@
+[🏠 Home](./README.md) | [Next ➡️](./02_linked_list.md)
+
+---
+
 # DS Definitions — Linear & Non-linear, Operations, Fundamentals
 
 
@@ -168,3 +172,8 @@ Proper data structure choice saves both time and space.
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 03–04 per question
+
+<br>
+
+---
+[🏠 Home](./README.md) | [Next ➡️](./02_linked_list.md)

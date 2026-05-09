@@ -1,3 +1,7 @@
+[⬅️ Previous](./13_graph_representation.md) | [🏠 Home](./README.md) | [Next ➡️](./15_dijkstra.md)
+
+---
+
 # BFS & DFS — Traversal, Cycle Detection, Connected Components
 
 
@@ -236,3 +240,8 @@ Trace back: J ← D ← F ← A (or J ← E ← C ← A)
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 6/8 years
 **Typical marks:** 03–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./13_graph_representation.md) | [🏠 Home](./README.md) | [Next ➡️](./15_dijkstra.md)

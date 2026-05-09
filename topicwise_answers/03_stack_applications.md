@@ -1,3 +1,7 @@
+[⬅️ Previous](./02_linked_list.md) | [🏠 Home](./README.md) | [Next ➡️](./04_queue.md)
+
+---
+
 # Stack Applications — Postfix Evaluation, Infix→Postfix Conversion
 
 
@@ -163,3 +167,8 @@ Assuming real division at step 5: 3/2 = 1.5
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 5/8 years
 **Typical marks:** 04 per question
+
+<br>
+
+---
+[⬅️ Previous](./02_linked_list.md) | [🏠 Home](./README.md) | [Next ➡️](./04_queue.md)

@@ -1,3 +1,7 @@
+[⬅️ Previous](./01_ds_definitions.md) | [🏠 Home](./README.md) | [Next ➡️](./03_stack_applications.md)
+
+---
+
 # Linked List — Operations, Types, vs Array
 
 
@@ -261,3 +265,8 @@ In doubly linked list, deleting node 20 requires only updating 10's NEXT and 30'
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 5/8 years
 **Typical marks:** 02–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./01_ds_definitions.md) | [🏠 Home](./README.md) | [Next ➡️](./03_stack_applications.md)

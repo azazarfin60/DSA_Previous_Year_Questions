@@ -1,3 +1,7 @@
+[⬅️ Previous](./05_bst.md) | [🏠 Home](./README.md) | [Next ➡️](./07_sorting.md)
+
+---
+
 # Heap — Min/Max Heap Build, Insert, Delete
 
 
@@ -435,3 +439,8 @@ Replace 22 with last element (60). Remove last. Heapify down.
 **Priority: 1/5** (Must Prepare)
 **Appeared in:** 7/8 years
 **Typical marks:** 03–05 per question
+
+<br>
+
+---
+[⬅️ Previous](./05_bst.md) | [🏠 Home](./README.md) | [Next ➡️](./07_sorting.md)

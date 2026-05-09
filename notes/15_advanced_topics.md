@@ -1,3 +1,7 @@
+[⬅️ Previous](./14_graph_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./cheatsheet.md)
+
+---
+
 # 📘 Chapter 15: Advanced Topics
 
 > **Key Topics:** 0/1 Knapsack (DP), Fractional Knapsack (Greedy), Job Sequencing, N-Queens, NP-Hard/NP-Complete, Huffman Coding
@@ -394,3 +398,8 @@ Measurement is hardware-dependent. An O(n²) algorithm might run faster than an 
 ---
 
 *← [14 — Graph Algorithms](14_graph_algorithms.md) | [Back to Index →](00_index.md)*
+
+<br>
+
+---
+[⬅️ Previous](./14_graph_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./cheatsheet.md)

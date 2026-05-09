@@ -1,3 +1,7 @@
+[⬅️ Previous](./2022_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2024_answer.md)
+
+---
+
 # 2023 — ECE 2103 Answer Key (OBE)
 
 ---
@@ -594,3 +598,8 @@ Insert Q at index 13: [O, M, K, J, L, D, C, A, G, I, E, B, Q]
 ## Q.8(c) Define algorithm. (CLO1, 01)
 
 **Algorithm:** A finite, well-defined sequence of instructions or steps designed to solve a specific problem or perform a computation. It takes input, processes it through defined steps, and produces output in finite time.
+
+<br>
+
+---
+[⬅️ Previous](./2022_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2024_answer.md)

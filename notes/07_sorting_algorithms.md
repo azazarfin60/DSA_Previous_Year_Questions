@@ -1,3 +1,7 @@
+[⬅️ Previous](./06_searching_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./08_recursion.md)
+
+---
+
 # 📘 Chapter 7: Sorting Algorithms
 
 > **Exam Frequency:** 4–8/8 years combined | **Typical Marks:** 03–06 | **Section:** A
@@ -445,3 +449,8 @@ This exact question appeared in **2017 and 2018**.
 ---
 
 *← [06 — Searching Algorithms](06_searching_algorithms.md) | Next: [08 — Recursion →](08_recursion.md)*
+
+<br>
+
+---
+[⬅️ Previous](./06_searching_algorithms.md) | [🏠 Home](./README.md) | [Next ➡️](./08_recursion.md)

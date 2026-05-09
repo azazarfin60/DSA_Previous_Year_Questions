@@ -1,32 +1,24 @@
-# 🏷️ Topic-Wise Answer Bank
+# Index for topicwise_answers
 
-Past exam answers reorganized by **topic** instead of year. Each file collects every question ever asked on that topic across 2017–2024, with complete solutions.
+---
 
-## Files
-
-| # | File | Topic |
-|---|------|-------|
-| 01 | `01_ds_definitions.md` | DS fundamentals & definitions |
-| 02 | `02_linked_list.md` | Linked List operations |
-| 03 | `03_stack_applications.md` | Stack & expression handling |
-| 04 | `04_queue.md` | Queue & Deque |
-| 05 | `05_bst.md` | Binary Search Tree |
-| 06 | `06_heap.md` | Heap & Priority Queue |
-| 07 | `07_sorting.md` | Sorting algorithms |
-| 08 | `08_searching.md` | Searching algorithms |
-| 09 | `09_hashing.md` | Hash tables & collision resolution |
-| 10 | `10_recursion.md` | Recursion & Tower of Hanoi |
-| 11 | `11_complexity_analysis.md` | Big-O, Big-Θ, Big-Ω |
-| 12 | `12_recurrence.md` | Recurrence relations & Master theorem |
-| 13 | `13_graph_representation.md` | Graph basics & representation |
-| 14 | `14_bfs_dfs.md` | BFS & DFS traversals |
-| 15 | `15_dijkstra.md` | Dijkstra's shortest path |
-| 16 | `16_bellman_ford.md` | Bellman-Ford algorithm |
-| 17 | `17_mst.md` | Minimum Spanning Tree (Prim's, Kruskal's) |
-| 18 | `18_backtracking.md` | Backtracking & N-Queens |
-| 19 | `19_tree_concepts.md` | AVL, B-Tree, tree properties |
-| 20 | `20_performance.md` | Algorithm performance & comparisons |
-
-## Usage
-
-Pick a topic you're weak on → study all past questions and solutions in one file → maximum efficiency.
+- [01 ds definitions](./01_ds_definitions.md)
+- [02 linked list](./02_linked_list.md)
+- [03 stack applications](./03_stack_applications.md)
+- [04 queue](./04_queue.md)
+- [05 bst](./05_bst.md)
+- [06 heap](./06_heap.md)
+- [07 sorting](./07_sorting.md)
+- [08 searching](./08_searching.md)
+- [09 hashing](./09_hashing.md)
+- [10 recursion](./10_recursion.md)
+- [11 complexity analysis](./11_complexity_analysis.md)
+- [12 recurrence](./12_recurrence.md)
+- [13 graph representation](./13_graph_representation.md)
+- [14 bfs dfs](./14_bfs_dfs.md)
+- [15 dijkstra](./15_dijkstra.md)
+- [16 bellman ford](./16_bellman_ford.md)
+- [17 mst](./17_mst.md)
+- [18 backtracking](./18_backtracking.md)
+- [19 tree concepts](./19_tree_concepts.md)
+- [20 performance](./20_performance.md)

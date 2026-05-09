@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "c9652bee8fa1a8dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "68dc2d6275309923",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65508480a4bfd018",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "boss_notes/README.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "038411a18228f754",
+    "type": "split",
+    "children": [
+      {
+        "id": "69becfc8e6190612",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dd7b387fe30d65eb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "04a99aebc56c5abe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "1a4f06e842603956",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "454d7652cf26a08e",
+    "type": "split",
+    "children": [
+      {
+        "id": "90cf7ca050e3b8a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ac280cbfc877134c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "boss_notes/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "25f31c5ad1889002",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "boss_notes/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "fcebcc9ccde8b331",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "20a27206fd5d2cd2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "24f5635ad3f0e0aa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "boss_notes/README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "65508480a4bfd018",
+  "lastOpenFiles": [
+    "boss_notes/12.1_Hashing.md",
+    "boss_notes/5.16_B-Tree.md",
+    "boss_notes/5.14_AVL_Tree.md",
+    "boss_notes/4.7_Simple_Queue_Operations.md",
+    "boss_notes/3.8_Infix_Prefix_and_Postfix_Expressions.md",
+    "boss_notes/3.3_Stack_Representation.md",
+    "boss_notes/2.9_Array_Operations.md",
+    "boss_notes/2.7_Address_Calculation_in_2D_Array.md",
+    "boss_notes/1.8_Linked_List_Operations.md",
+    "notes/04_stacks.md",
+    "convert_pseudocode.py",
+    "questions/2020.md",
+    "questions/2018.md",
+    "questions/2017.md",
+    "answers/README.md",
+    "answers/2018_answer.md",
+    "answers/2017_answer.md",
+    "DSAClassnote_Context/README.md",
+    "add_nav_all_folders.py",
+    "boss_notes/1.5_Types_of_Linked_List.md",
+    "boss_notes/README.md",
+    "build_index.py"
+  ]
+}

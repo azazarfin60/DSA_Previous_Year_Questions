@@ -1,3 +1,7 @@
+[⬅️ Previous](./Introduction_to_Data_Structure_and_Algorithm.md) | [🏠 Home](./README.md)
+
+---
+
 # Time and Space Complexity
 
 📺 [Watch on YouTube](https://www.youtube.com/watch?v=IzGac_ZANqg)
@@ -163,3 +167,8 @@ for (int i = 0; i < n; i++)
 - For small data, algorithm choice doesn't matter much; for **large data**, it's critical
 - Space complexity = input space + auxiliary space
 - Scalability is the most important factor in software development
+
+<br>
+
+---
+[⬅️ Previous](./Introduction_to_Data_Structure_and_Algorithm.md) | [🏠 Home](./README.md)

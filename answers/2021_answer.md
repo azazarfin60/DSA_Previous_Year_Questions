@@ -1,3 +1,7 @@
+[⬅️ Previous](./2020_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2022_answer.md)
+
+---
+
 # 2021 — ECE 2103 Answer Key
 
 ---
@@ -725,3 +729,8 @@ Insert 90 at next position (right child of 40). Bubble up:
 ```
 
 > 90 stays at position since it is larger than its parent (40). No bubbling needed.
+
+<br>
+
+---
+[⬅️ Previous](./2020_answer.md) | [🏠 Home](./README.md) | [Next ➡️](./2022_answer.md)

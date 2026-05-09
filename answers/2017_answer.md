@@ -1,3 +1,7 @@
+[🏠 Home](./README.md) | [Next ➡️](./2018_answer.md)
+
+---
+
 # 2017 — ECE 2103 Answer Key
 # Section A
 
@@ -666,3 +670,8 @@ Header → [count=3] → [10] → [20] → [30] → NULL
 ```
 Without header: inserting before 10 requires changing START.
 With header: insert after header — no pointer change needed for START.
+
+<br>
+
+---
+[🏠 Home](./README.md) | [Next ➡️](./2018_answer.md)

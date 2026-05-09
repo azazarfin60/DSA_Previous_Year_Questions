@@ -1,3 +1,7 @@
+[⬅️ Previous](./11_complexity_analysis.md) | [🏠 Home](./README.md) | [Next ➡️](./13_graph_representation.md)
+
+---
+
 # Recurrence Relations — Substitution Method, Master Theorem
 
 
@@ -46,3 +50,8 @@ This is **Case 2:** f(n) = Θ(n^(log_b a))
 **Priority: 2/5** (Should Prepare)
 **Appeared in:** 4/8 years
 **Typical marks:** 03–04 per question
+
+<br>
+
+---
+[⬅️ Previous](./11_complexity_analysis.md) | [🏠 Home](./README.md) | [Next ➡️](./13_graph_representation.md)

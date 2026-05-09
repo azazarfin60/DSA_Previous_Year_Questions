@@ -1,3 +1,7 @@
+[⬅️ Previous](./11_heap_and_btree.md) | [🏠 Home](./README.md) | [Next ➡️](./13_graphs.md)
+
+---
+
 # 📘 Chapter 12: Hashing
 
 > **Exam Frequency:** 5/8 years | **Typical Marks:** 02–06 | **Section:** A/B
@@ -277,3 +281,8 @@ No probing needed — just append to linked list!
 ---
 
 *← [11 — Heap](11_heap_and_btree.md) | Next: [13 — Graphs →](13_graphs.md)*
+
+<br>
+
+---
+[⬅️ Previous](./11_heap_and_btree.md) | [🏠 Home](./README.md) | [Next ➡️](./13_graphs.md)

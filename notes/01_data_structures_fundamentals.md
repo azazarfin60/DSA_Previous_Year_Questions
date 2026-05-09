@@ -1,3 +1,7 @@
+[🏠 Home](./README.md) | [Next ➡️](./02_arrays_and_matrices.md)
+
+---
+
 # 📘 Chapter 1: Data Structures — Fundamentals
 
 > **Exam Frequency:** 7/8 years | **Typical Marks:** 03–04 | **Section:** A
@@ -375,7 +379,38 @@ After Garbage Collection:
 
 ---
 
-## 9. Exam-Ready Summary
+## 9. Basic C Concepts Review (Instructor Notes)
+
+Since the course implementation language is C, the instructor emphasized several core language concepts:
+
+### 9.1 The `+=` vs `=+` Operators
+- `+=` (Compound Assignment): Increments the value. Example: `x += 1` adds 1 to `x` (equivalent to `x = x + 1`).
+- `=+` (Assignment with Unary Plus): Assigns a positive value. Example: `x = +y` or `x =+ y` simply assigns the positive value of `y` to `x`.
+
+### 9.2 Difference Between `struct`, `union`, and `enum` (Important Viva Question)
+| Feature | `struct` (Structure) | `union` | `enum` (Enumeration) |
+|---|---|---|---|
+| **Purpose** | Groups variables of different data types | Groups variables of different data types | Assigns names to integer constants |
+| **Memory Allocation** | Allocates memory for **all** members separately | Allocates memory only for the **largest** member | Allocates memory for an integer |
+| **Memory Size** | Sum of sizes of all members (plus padding) | Size of the largest member | Size of an `int` |
+| **Access** | All members can be accessed at any time | Only one member can be accessed at a time | Members act as constant values |
+
+### 9.3 Pointers Overview
+A **pointer** is a variable that stores the memory address of another variable. There is a direct connection between the CPU and the memory unit via pointers.
+
+**Important Pointer Types:**
+1. **Void Pointer (`void *`):** A generic pointer that has no associated data type. It can hold the address of any type of variable and can be typecasted to any type.
+   ```c
+   int n = 10;
+   void *ptr = &n;
+   printf("%d", *(int*)ptr); // Must typecast before dereferencing
+   ```
+2. **NULL Pointer:** A pointer that points to nothing. Its value is 0 or `NULL`. It is a good practice to initialize pointers as NULL if they don't immediately point to a valid location.
+3. **Dangling Pointer:** A pointer pointing to a memory location that has been deleted (or freed). Using a dangling pointer leads to undefined behavior.
+
+---
+
+## 10. Exam-Ready Summary
 
 ### Quick Revision Points
 1. **Data Structure** = way of organizing data for efficient access
@@ -387,6 +422,7 @@ After Garbage Collection:
 7. **Performance Analysis** = theoretical (Big-O, machine-independent)
 8. **Performance Measurement** = experimental (actual time, machine-dependent)
 9. **Garbage Collection** = reclaim unused memory → return to AVAIL list
+10. **Pointers:** Void (no type), NULL (points to 0), Dangling (points to freed memory)
 
 ### Common Exam Question Patterns
 - "Define linear and non-linear DS with examples" (02–04 marks) — appears almost every year
@@ -395,10 +431,11 @@ After Garbage Collection:
 - "Performance analysis vs measurement" (02–03 marks)
 - "Why do we need data structures?" (02–03 marks)
 - "DS can reduce time and space complexity — justify" (03 marks)
+- "Differentiate between struct, union, and enum" (Viva/Short Q)
 
 ---
 
-## 10. Practice Problems (From Past Exams)
+## 11. Practice Problems (From Past Exams)
 
 ### Problem 1 [2017, 04 marks]
 **Q:** Define linear and non-linear data structure. Discuss major operations in data structures.
@@ -418,3 +455,8 @@ After Garbage Collection:
 ---
 
 *Next Chapter: [02 — Arrays and Matrices →](02_arrays_and_matrices.md)*
+
+<br>
+
+---
+[🏠 Home](./README.md) | [Next ➡️](./02_arrays_and_matrices.md)
